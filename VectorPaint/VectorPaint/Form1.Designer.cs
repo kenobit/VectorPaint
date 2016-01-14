@@ -46,7 +46,7 @@
             this.Type_pan = new System.Windows.Forms.Panel();
             this.Width_pan = new System.Windows.Forms.Panel();
             this.Figures_pan = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.FigureCheck_radioRegion = new System.Windows.Forms.GroupBox();
             this.radioCurve = new System.Windows.Forms.RadioButton();
             this.radioLine = new System.Windows.Forms.RadioButton();
             this.radioRoundRect = new System.Windows.Forms.RadioButton();
@@ -54,16 +54,16 @@
             this.radioRectangle = new System.Windows.Forms.RadioButton();
             this.Color_pan = new System.Windows.Forms.Panel();
             this.ColorDialog = new System.Windows.Forms.ColorDialog();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Clear_btn = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Tabs_tc = new System.Windows.Forms.TabControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddTab = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.LeftPanel_pan.SuspendLayout();
             this.Figures_pan.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.FigureCheck_radioRegion.SuspendLayout();
             this.Tabs_tc.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,7 +174,7 @@
             this.LeftPanel_pan.Controls.Add(this.Color_pan);
             this.LeftPanel_pan.Location = new System.Drawing.Point(4, 67);
             this.LeftPanel_pan.Name = "LeftPanel_pan";
-            this.LeftPanel_pan.Size = new System.Drawing.Size(258, 628);
+            this.LeftPanel_pan.Size = new System.Drawing.Size(258, 618);
             this.LeftPanel_pan.TabIndex = 2;
             // 
             // Type_pan
@@ -199,29 +199,30 @@
             // 
             this.Figures_pan.BackColor = System.Drawing.Color.White;
             this.Figures_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Figures_pan.Controls.Add(this.groupBox1);
+            this.Figures_pan.Controls.Add(this.FigureCheck_radioRegion);
             this.Figures_pan.Location = new System.Drawing.Point(4, 63);
             this.Figures_pan.Name = "Figures_pan";
             this.Figures_pan.Size = new System.Drawing.Size(250, 150);
             this.Figures_pan.TabIndex = 1;
             // 
-            // groupBox1
+            // FigureCheck_radioRegion
             // 
-            this.groupBox1.Controls.Add(this.radioCurve);
-            this.groupBox1.Controls.Add(this.radioLine);
-            this.groupBox1.Controls.Add(this.radioRoundRect);
-            this.groupBox1.Controls.Add(this.radioEllipse);
-            this.groupBox1.Controls.Add(this.radioRectangle);
-            this.groupBox1.Location = new System.Drawing.Point(-1, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 146);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Figures";
+            this.FigureCheck_radioRegion.Controls.Add(this.radioCurve);
+            this.FigureCheck_radioRegion.Controls.Add(this.radioLine);
+            this.FigureCheck_radioRegion.Controls.Add(this.radioRoundRect);
+            this.FigureCheck_radioRegion.Controls.Add(this.radioEllipse);
+            this.FigureCheck_radioRegion.Controls.Add(this.radioRectangle);
+            this.FigureCheck_radioRegion.Location = new System.Drawing.Point(-1, 3);
+            this.FigureCheck_radioRegion.Name = "FigureCheck_radioRegion";
+            this.FigureCheck_radioRegion.Size = new System.Drawing.Size(250, 146);
+            this.FigureCheck_radioRegion.TabIndex = 0;
+            this.FigureCheck_radioRegion.TabStop = false;
+            this.FigureCheck_radioRegion.Text = "Figures";
             // 
             // radioCurve
             // 
             this.radioCurve.AutoSize = true;
+            this.radioCurve.Enabled = false;
             this.radioCurve.Location = new System.Drawing.Point(5, 116);
             this.radioCurve.Name = "radioCurve";
             this.radioCurve.Size = new System.Drawing.Size(53, 17);
@@ -232,6 +233,7 @@
             // radioLine
             // 
             this.radioLine.AutoSize = true;
+            this.radioLine.Enabled = false;
             this.radioLine.Location = new System.Drawing.Point(7, 92);
             this.radioLine.Name = "radioLine";
             this.radioLine.Size = new System.Drawing.Size(45, 17);
@@ -242,6 +244,7 @@
             // radioRoundRect
             // 
             this.radioRoundRect.AutoSize = true;
+            this.radioRoundRect.Enabled = false;
             this.radioRoundRect.Location = new System.Drawing.Point(7, 68);
             this.radioRoundRect.Name = "radioRoundRect";
             this.radioRoundRect.Size = new System.Drawing.Size(80, 17);
@@ -281,39 +284,6 @@
             this.Color_pan.TabIndex = 0;
             this.Color_pan.Click += new System.EventHandler(this.Color_pan_Click);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(726, 607);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(726, 607);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseDown);
-            this.tabPage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseMove);
-            this.tabPage1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseUp);
-            // 
-            // Tabs_tc
-            // 
-            this.Tabs_tc.Controls.Add(this.tabPage1);
-            this.Tabs_tc.Controls.Add(this.tabPage2);
-            this.Tabs_tc.Location = new System.Drawing.Point(260, 52);
-            this.Tabs_tc.Name = "Tabs_tc";
-            this.Tabs_tc.SelectedIndex = 0;
-            this.Tabs_tc.Size = new System.Drawing.Size(734, 633);
-            this.Tabs_tc.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -325,22 +295,55 @@
             this.label1.Text = "COLOR";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // Clear_btn
             // 
-            this.button1.Location = new System.Drawing.Point(915, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Clear_btn.Location = new System.Drawing.Point(931, 52);
+            this.Clear_btn.Name = "Clear_btn";
+            this.Clear_btn.Size = new System.Drawing.Size(59, 20);
+            this.Clear_btn.TabIndex = 4;
+            this.Clear_btn.Text = "Clear tab";
+            this.Clear_btn.UseVisualStyleBackColor = true;
+            this.Clear_btn.Click += new System.EventHandler(this.Clear_btn_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(726, 607);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabPage_MouseDown);
+            this.tabPage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabPage_MouseMove);
+            this.tabPage1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tabPage_MouseUp);
+            // 
+            // Tabs_tc
+            // 
+            this.Tabs_tc.Controls.Add(this.tabPage1);
+            this.Tabs_tc.Location = new System.Drawing.Point(260, 52);
+            this.Tabs_tc.Name = "Tabs_tc";
+            this.Tabs_tc.SelectedIndex = 0;
+            this.Tabs_tc.Size = new System.Drawing.Size(734, 633);
+            this.Tabs_tc.TabIndex = 3;
+            // 
+            // AddTab
+            // 
+            this.AddTab.Location = new System.Drawing.Point(911, 52);
+            this.AddTab.Name = "AddTab";
+            this.AddTab.Size = new System.Drawing.Size(20, 20);
+            this.AddTab.TabIndex = 5;
+            this.AddTab.Text = "+";
+            this.AddTab.UseVisualStyleBackColor = true;
+            this.AddTab.Click += new System.EventHandler(this.AddTab_btn_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 689);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddTab);
+            this.Controls.Add(this.Clear_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Tabs_tc);
             this.Controls.Add(this.LeftPanel_pan);
@@ -358,8 +361,8 @@
             this.ToolBar.PerformLayout();
             this.LeftPanel_pan.ResumeLayout(false);
             this.Figures_pan.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.FigureCheck_radioRegion.ResumeLayout(false);
+            this.FigureCheck_radioRegion.PerformLayout();
             this.Tabs_tc.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -385,7 +388,7 @@
         private System.Windows.Forms.ToolStripMenuItem tabsToolStripMenuItem;
         private System.Windows.Forms.Panel Type_pan;
         private System.Windows.Forms.ToolStripMenuItem widthToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox FigureCheck_radioRegion;
         private System.Windows.Forms.RadioButton radioCurve;
         private System.Windows.Forms.RadioButton radioLine;
         private System.Windows.Forms.RadioButton radioRoundRect;
@@ -393,11 +396,11 @@
         private System.Windows.Forms.RadioButton radioRectangle;
         private System.Windows.Forms.ColorDialog ColorDialog;
         private System.Windows.Forms.ToolStripButton Save_;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Clear_btn;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl Tabs_tc;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddTab;
     }
 }
 

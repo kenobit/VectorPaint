@@ -15,9 +15,9 @@ namespace VectorPaint
     {
         public Color c = Color.Black;
         IShape currentShape = null;
-        int tabX = 0, tabY = 0;
+        int tabX = 0, 
+            tabY = 0;
         bool f = false;
-        TabPage currentPage;
         TabPage.ControlCollection CurrentTabControls;
 
         public MainWindow()
@@ -31,44 +31,94 @@ namespace VectorPaint
             {
                 (sender as Control).BackColor = ColorDialog.Color;
                 c = ColorDialog.Color;
-                string sdsdsdsd = ColorDialog.Color.ToArgb().ToString();
-
-                MessageBox.Show(c.R + " " + c.G+" "+c.B+" "+c.A);
-                MessageBox.Show(c.Name);
             }
         }
 
-        private void tabPage1_MouseDown(object sender, MouseEventArgs e)
+        private void tabPage_MouseDown(object sender, MouseEventArgs e)
+        {
+            TabMouseDown(sender, e);
+        }
+
+        private void tabPage_MouseMove(object sender, MouseEventArgs e)
+        {
+            TabMouseMove(sender, e);
+        }
+
+        private void Clear_btn_Click(object sender, EventArgs e)
+        {
+            Tabs_tc.SelectedTab.Controls.Clear();
+        }
+        
+        private void AddTab_btn_Click(object sender, EventArgs e)
+        {
+            TabPage tp = new TabPage("new page");
+            tp.BackColor = Color.White;
+            tp.MouseMove += TabMouseMove;
+            tp.MouseUp += TabMouseUp;
+            tp.MouseDown += TabMouseDown;
+            Tabs_tc.TabPages.Add(tp);
+            Tabs_tc.SelectedTab = tp;
+        }
+
+        private void tabPage_MouseUp(object sender, MouseEventArgs e)
+        {
+            TabMouseUp(sender, e);
+        }
+
+        private void TabMouseDown(object sender, MouseEventArgs e)
         {
             this.tabX = e.X;
-            
             this.tabY = e.Y;
-            IShape shape = new CustomRect(e.X, e.Y, c, 15,15,1);
-            this.currentShape = shape;
-            (sender as TabPage).Controls.Add(shape);
+            IShape shape = SelectedFigureCheck(e);
             
+             this.currentShape = shape;
+            (sender as TabPage).Controls.Add(shape);
             CurrentTabControls = (sender as TabPage).Controls;
             f = true;
         }
+        private void TabMouseUp(object sender, MouseEventArgs e)
+        {
+            f = false;
+        }
 
-        private void tabPage1_MouseMove(object sender, MouseEventArgs e)
+        private void TabMouseMove(object sender, MouseEventArgs e)
         {
             if (f)
             {
                 this.currentShape.DrowDrag(e.X, e.Y, tabX, tabY);
                 currentShape.Refresh();
             }
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private IShape SelectedFigureCheck(MouseEventArgs e)
         {
-            Tabs_tc.SelectedTab.Controls.Clear();
-        }
+            IShape shape = null;
+            string sw = "";
+            foreach (RadioButton radio in FigureCheck_radioRegion.Controls)
+            {
+                if (radio.Checked == true)
+                {
+                    sw = radio.Text;
+                }
+            }
+            switch (sw.ToLower())
+            {
+                case "rectangle":
+                    {
+                        shape = new CustomRect(e.X, e.Y, c, 15, 15, 1);
+                    }
+                    break;
+                case "ellipse":
+                    {
+                        shape = new CustomEllipse(e.X, e.Y, c, 15, 15, 1);
+                    }
+                    break;
+                default:
+                    shape = new CustomRect(e.X, e.Y, c, 15, 15, 1);
+                    break;
+            }
 
-        private void tabPage1_MouseUp(object sender, MouseEventArgs e)
-        {
-            f = false;
+            return shape;
         }
     }
 }

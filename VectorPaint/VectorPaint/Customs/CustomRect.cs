@@ -10,7 +10,7 @@ namespace VectorPaint.Customs
 {
     public class CustomRect : IShape
     {
-        public override string GetType { get { return "rect"; } }
+        public override string Type { get { return "rectangle"; } }
         public int Thick { get; set; }
 
         public CustomRect(int x, int y, Color color, int width, int height, int thick)
@@ -74,28 +74,5 @@ namespace VectorPaint.Customs
         {
             this.BackColor = Color.White;
         }
-
-        //protected override void OnClick(EventArgs e)
-        //{
-        //    foreach (IShape item in this.Parent.Controls)
-        //    {
-        //        item.LostFocusMethod(e);
-        //    }
-        //    this.OnGotFocus(e);
-        //}
-
-        //protected override void OnLostFocus(EventArgs e)
-        //{
-        //    BackColor = Color.White;
-        //}
-        //protected override void OnGotFocus(EventArgs e)
-        //{
-        //    BackColor = Color.Silver;
-        //}
-
-        //public override void LostFocusMethod(EventArgs e)
-        //{
-        //    OnLostFocus(e);
-        //}
     }
 }
