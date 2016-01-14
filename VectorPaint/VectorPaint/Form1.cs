@@ -27,14 +27,11 @@ namespace VectorPaint
 
         private void Tabs_PaintEvent(object sender, PaintEventArgs e)
         {
-
-            Graphics graphics = e.Graphics;
-            graphics.DrawRectangle(new Pen(Color.Red), new Rectangle(150, 250, 330, 335));
         }
 
         private void Tabs_MouseDownEvent(object sender, MouseEventArgs e)
         {
-
+            Controls.Add(new Customs.CustomRect(50, 50, 20, Color.Green));
         }
 
         private void Tabs_MouseMoveEvent(object sender, MouseEventArgs e)
@@ -44,7 +41,7 @@ namespace VectorPaint
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            this.Controls.Add(new Customs.Rectangle(50,50,30,30,10,Color.Red));
+            
         }
     }
 }

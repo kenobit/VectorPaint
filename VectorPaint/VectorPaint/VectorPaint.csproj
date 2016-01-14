@@ -47,11 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customs\IShape.cs" />
-    <Compile Include="Customs\Rectangle.cs">
+    <Compile Include="CustomRect.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Customs\XData.cs" />
+    <Compile Include="CustomRect.Designer.cs">
+      <DependentUpon>CustomRect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IShape.cs" />
+    <Compile Include="QRectangle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
