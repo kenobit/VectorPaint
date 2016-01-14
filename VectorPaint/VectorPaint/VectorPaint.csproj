@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customs\CustomEllipse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customs\CustomEllipse.Designer.cs">
+      <DependentUpon>CustomEllipse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customs\CustomRect.cs">
       <SubType>Component</SubType>
     </Compile>

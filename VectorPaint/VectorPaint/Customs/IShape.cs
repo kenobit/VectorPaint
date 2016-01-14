@@ -10,5 +10,9 @@ namespace VectorPaint.Customs
     public abstract class IShape: Control
     {
         public virtual string GetType{ get;}
+        public virtual void DrowDrag(int mouseX, int mouseY)
+        {
+
+        }
     }
 }
