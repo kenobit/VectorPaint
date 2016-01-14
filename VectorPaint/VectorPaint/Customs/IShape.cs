@@ -10,6 +10,6 @@ namespace VectorPaint.Customs
     public interface IShape
     {
         XData Data { get; set; }
-        void
+        
     }
 }

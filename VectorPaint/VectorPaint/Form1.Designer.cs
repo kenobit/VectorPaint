@@ -39,21 +39,30 @@
             this.positionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.widthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar = new System.Windows.Forms.ToolStrip();
+            this.Save_ = new System.Windows.Forms.ToolStripButton();
             this.LeftPanel_pan = new System.Windows.Forms.Panel();
             this.Type_pan = new System.Windows.Forms.Panel();
             this.Width_pan = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.sizeYValue = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.sizeYDescription = new System.Windows.Forms.Label();
+            this.sizeXDescription = new System.Windows.Forms.Label();
+            this.posYDescription = new System.Windows.Forms.Label();
+            this.posXDescription = new System.Windows.Forms.Label();
             this.Figures_pan = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioCurve = new System.Windows.Forms.RadioButton();
+            this.radioLine = new System.Windows.Forms.RadioButton();
+            this.radioRoundRect = new System.Windows.Forms.RadioButton();
+            this.radioEllipse = new System.Windows.Forms.RadioButton();
+            this.radioRectangle = new System.Windows.Forms.RadioButton();
             this.Color_pan = new System.Windows.Forms.Panel();
             this.ColorDialog = new System.Windows.Forms.ColorDialog();
-            this.widthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioRectangle = new System.Windows.Forms.RadioButton();
-            this.radioEllipse = new System.Windows.Forms.RadioButton();
-            this.radioRoundRect = new System.Windows.Forms.RadioButton();
-            this.radioLine = new System.Windows.Forms.RadioButton();
-            this.radioCurve = new System.Windows.Forms.RadioButton();
-            this.Save_ = new System.Windows.Forms.ToolStripButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Tabs_tc = new System.Windows.Forms.TabControl();
@@ -61,6 +70,8 @@
             this.MenuBar.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.LeftPanel_pan.SuspendLayout();
+            this.Width_pan.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.Figures_pan.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Tabs_tc.SuspendLayout();
@@ -140,6 +151,12 @@
             this.tabsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.tabsToolStripMenuItem.Text = "Tabs";
             // 
+            // widthToolStripMenuItem
+            // 
+            this.widthToolStripMenuItem.Name = "widthToolStripMenuItem";
+            this.widthToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.widthToolStripMenuItem.Text = "Width";
+            // 
             // ToolBar
             // 
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -149,6 +166,15 @@
             this.ToolBar.Size = new System.Drawing.Size(995, 25);
             this.ToolBar.TabIndex = 1;
             this.ToolBar.Text = "toolStrip1";
+            // 
+            // Save_
+            // 
+            this.Save_.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Save_.Image = ((System.Drawing.Image)(resources.GetObject("Save_.Image")));
+            this.Save_.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Save_.Name = "Save_";
+            this.Save_.Size = new System.Drawing.Size(35, 22);
+            this.Save_.Text = "Save";
             // 
             // LeftPanel_pan
             // 
@@ -165,7 +191,7 @@
             // 
             this.Type_pan.BackColor = System.Drawing.Color.White;
             this.Type_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Type_pan.Location = new System.Drawing.Point(4, 465);
+            this.Type_pan.Location = new System.Drawing.Point(4, 375);
             this.Type_pan.Name = "Type_pan";
             this.Type_pan.Size = new System.Drawing.Size(250, 150);
             this.Type_pan.TabIndex = 2;
@@ -174,10 +200,100 @@
             // 
             this.Width_pan.BackColor = System.Drawing.Color.White;
             this.Width_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Width_pan.Location = new System.Drawing.Point(4, 313);
+            this.Width_pan.Controls.Add(this.groupBox2);
+            this.Width_pan.Location = new System.Drawing.Point(4, 219);
             this.Width_pan.Name = "Width_pan";
             this.Width_pan.Size = new System.Drawing.Size(250, 150);
             this.Width_pan.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.sizeYValue);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.sizeYDescription);
+            this.groupBox2.Controls.Add(this.sizeXDescription);
+            this.groupBox2.Controls.Add(this.posYDescription);
+            this.groupBox2.Controls.Add(this.posXDescription);
+            this.groupBox2.Location = new System.Drawing.Point(-1, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(251, 146);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Positions";
+            // 
+            // sizeYValue
+            // 
+            this.sizeYValue.AutoSize = true;
+            this.sizeYValue.Location = new System.Drawing.Point(198, 59);
+            this.sizeYValue.Name = "sizeYValue";
+            this.sizeYValue.Size = new System.Drawing.Size(13, 13);
+            this.sizeYValue.TabIndex = 7;
+            this.sizeYValue.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(197, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(197, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(197, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "0";
+            // 
+            // sizeYDescription
+            // 
+            this.sizeYDescription.AutoSize = true;
+            this.sizeYDescription.Location = new System.Drawing.Point(6, 59);
+            this.sizeYDescription.Name = "sizeYDescription";
+            this.sizeYDescription.Size = new System.Drawing.Size(37, 13);
+            this.sizeYDescription.TabIndex = 3;
+            this.sizeYDescription.Text = "Size Y";
+            // 
+            // sizeXDescription
+            // 
+            this.sizeXDescription.AutoSize = true;
+            this.sizeXDescription.Location = new System.Drawing.Point(5, 46);
+            this.sizeXDescription.Name = "sizeXDescription";
+            this.sizeXDescription.Size = new System.Drawing.Size(37, 13);
+            this.sizeXDescription.TabIndex = 2;
+            this.sizeXDescription.Text = "Size X";
+            // 
+            // posYDescription
+            // 
+            this.posYDescription.AutoSize = true;
+            this.posYDescription.Location = new System.Drawing.Point(5, 33);
+            this.posYDescription.Name = "posYDescription";
+            this.posYDescription.Size = new System.Drawing.Size(54, 13);
+            this.posYDescription.TabIndex = 1;
+            this.posYDescription.Text = "Position Y";
+            // 
+            // posXDescription
+            // 
+            this.posXDescription.AutoSize = true;
+            this.posXDescription.Location = new System.Drawing.Point(5, 20);
+            this.posXDescription.Name = "posXDescription";
+            this.posXDescription.Size = new System.Drawing.Size(54, 13);
+            this.posXDescription.TabIndex = 0;
+            this.posXDescription.Text = "Position X";
             // 
             // Figures_pan
             // 
@@ -188,22 +304,6 @@
             this.Figures_pan.Name = "Figures_pan";
             this.Figures_pan.Size = new System.Drawing.Size(250, 150);
             this.Figures_pan.TabIndex = 1;
-            // 
-            // Color_pan
-            // 
-            this.Color_pan.BackColor = System.Drawing.Color.Black;
-            this.Color_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Color_pan.Location = new System.Drawing.Point(4, 7);
-            this.Color_pan.Name = "Color_pan";
-            this.Color_pan.Size = new System.Drawing.Size(250, 50);
-            this.Color_pan.TabIndex = 0;
-            this.Color_pan.Click += new System.EventHandler(this.Color_pan_Click);
-            // 
-            // widthToolStripMenuItem
-            // 
-            this.widthToolStripMenuItem.Name = "widthToolStripMenuItem";
-            this.widthToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.widthToolStripMenuItem.Text = "Width";
             // 
             // groupBox1
             // 
@@ -219,6 +319,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Figures";
             // 
+            // radioCurve
+            // 
+            this.radioCurve.AutoSize = true;
+            this.radioCurve.Location = new System.Drawing.Point(5, 116);
+            this.radioCurve.Name = "radioCurve";
+            this.radioCurve.Size = new System.Drawing.Size(53, 17);
+            this.radioCurve.TabIndex = 4;
+            this.radioCurve.Text = "Curve";
+            this.radioCurve.UseVisualStyleBackColor = true;
+            // 
+            // radioLine
+            // 
+            this.radioLine.AutoSize = true;
+            this.radioLine.Location = new System.Drawing.Point(7, 92);
+            this.radioLine.Name = "radioLine";
+            this.radioLine.Size = new System.Drawing.Size(45, 17);
+            this.radioLine.TabIndex = 3;
+            this.radioLine.Text = "Line";
+            this.radioLine.UseVisualStyleBackColor = true;
+            // 
+            // radioRoundRect
+            // 
+            this.radioRoundRect.AutoSize = true;
+            this.radioRoundRect.Location = new System.Drawing.Point(7, 68);
+            this.radioRoundRect.Name = "radioRoundRect";
+            this.radioRoundRect.Size = new System.Drawing.Size(80, 17);
+            this.radioRoundRect.TabIndex = 2;
+            this.radioRoundRect.Text = "RoundRect";
+            this.radioRoundRect.UseVisualStyleBackColor = true;
+            // 
+            // radioEllipse
+            // 
+            this.radioEllipse.AutoSize = true;
+            this.radioEllipse.Location = new System.Drawing.Point(7, 44);
+            this.radioEllipse.Name = "radioEllipse";
+            this.radioEllipse.Size = new System.Drawing.Size(55, 17);
+            this.radioEllipse.TabIndex = 1;
+            this.radioEllipse.Text = "Ellipse";
+            this.radioEllipse.UseVisualStyleBackColor = true;
+            // 
             // radioRectangle
             // 
             this.radioRectangle.AutoSize = true;
@@ -231,54 +371,15 @@
             this.radioRectangle.Text = "Rectangle";
             this.radioRectangle.UseVisualStyleBackColor = true;
             // 
-            // radioEllipse
+            // Color_pan
             // 
-            this.radioEllipse.AutoSize = true;
-            this.radioEllipse.Location = new System.Drawing.Point(7, 44);
-            this.radioEllipse.Name = "radioEllipse";
-            this.radioEllipse.Size = new System.Drawing.Size(55, 17);
-            this.radioEllipse.TabIndex = 1;
-            this.radioEllipse.Text = "Ellipse";
-            this.radioEllipse.UseVisualStyleBackColor = true;
-            // 
-            // radioRoundRect
-            // 
-            this.radioRoundRect.AutoSize = true;
-            this.radioRoundRect.Location = new System.Drawing.Point(7, 68);
-            this.radioRoundRect.Name = "radioRoundRect";
-            this.radioRoundRect.Size = new System.Drawing.Size(80, 17);
-            this.radioRoundRect.TabIndex = 2;
-            this.radioRoundRect.Text = "RoundRect";
-            this.radioRoundRect.UseVisualStyleBackColor = true;
-            // 
-            // radioLine
-            // 
-            this.radioLine.AutoSize = true;
-            this.radioLine.Location = new System.Drawing.Point(7, 92);
-            this.radioLine.Name = "radioLine";
-            this.radioLine.Size = new System.Drawing.Size(45, 17);
-            this.radioLine.TabIndex = 3;
-            this.radioLine.Text = "Line";
-            this.radioLine.UseVisualStyleBackColor = true;
-            // 
-            // radioCurve
-            // 
-            this.radioCurve.AutoSize = true;
-            this.radioCurve.Location = new System.Drawing.Point(5, 116);
-            this.radioCurve.Name = "radioCurve";
-            this.radioCurve.Size = new System.Drawing.Size(53, 17);
-            this.radioCurve.TabIndex = 4;
-            this.radioCurve.Text = "Curve";
-            this.radioCurve.UseVisualStyleBackColor = true;
-            // 
-            // Save_
-            // 
-            this.Save_.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Save_.Image = ((System.Drawing.Image)(resources.GetObject("Save_.Image")));
-            this.Save_.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Save_.Name = "Save_";
-            this.Save_.Size = new System.Drawing.Size(23, 22);
-            this.Save_.Text = "Save";
+            this.Color_pan.BackColor = System.Drawing.Color.Black;
+            this.Color_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Color_pan.Location = new System.Drawing.Point(4, 7);
+            this.Color_pan.Name = "Color_pan";
+            this.Color_pan.Size = new System.Drawing.Size(250, 50);
+            this.Color_pan.TabIndex = 0;
+            this.Color_pan.Click += new System.EventHandler(this.Color_pan_Click);
             // 
             // tabPage2
             // 
@@ -301,6 +402,9 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.Tabs_PaintEvent);
+            this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tabs_MouseDownEvent);
+            this.tabPage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Tabs_MouseMoveEvent);
             // 
             // Tabs_tc
             // 
@@ -333,6 +437,7 @@
             this.Controls.Add(this.LeftPanel_pan);
             this.Controls.Add(this.ToolBar);
             this.Controls.Add(this.MenuBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.MenuBar;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -344,6 +449,9 @@
             this.ToolBar.ResumeLayout(false);
             this.ToolBar.PerformLayout();
             this.LeftPanel_pan.ResumeLayout(false);
+            this.Width_pan.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.Figures_pan.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -384,6 +492,15 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl Tabs_tc;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label sizeYValue;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label sizeYDescription;
+        private System.Windows.Forms.Label sizeXDescription;
+        private System.Windows.Forms.Label posYDescription;
+        private System.Windows.Forms.Label posXDescription;
     }
 }
 

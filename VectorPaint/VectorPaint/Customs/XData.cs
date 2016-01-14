@@ -11,6 +11,10 @@ namespace VectorPaint.Customs
         public int SizeY { get; set; }
         public Color Color { get; set; }
 
+        public XData()
+        {
+
+        }
         public XData(int pointX,int pointY,int sizeX,int sizeY,int width,Color color)
         {
             this.PointX = pointX;

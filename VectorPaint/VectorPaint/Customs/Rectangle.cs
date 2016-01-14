@@ -18,6 +18,7 @@ namespace VectorPaint.Customs
         }
         public Rectangle(int x, int y,int sizeX,int sizeY,int width, Color color)
         {
+            this.Data = new XData();
             this.Data.PointX = x;
             this.Data.PointY = y;
             this.Data.SizeX = sizeX;
