@@ -58,6 +58,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Tabs_tc = new System.Windows.Forms.TabControl();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.LeftPanel_pan.SuspendLayout();
@@ -324,11 +325,22 @@
             this.label1.Text = "COLOR";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(915, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 689);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Tabs_tc);
             this.Controls.Add(this.LeftPanel_pan);
@@ -385,6 +397,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl Tabs_tc;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

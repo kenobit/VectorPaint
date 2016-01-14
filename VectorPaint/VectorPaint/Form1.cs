@@ -61,6 +61,11 @@ namespace VectorPaint
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Tabs_tc.SelectedTab.Controls.Clear();
+        }
+
         private void tabPage1_MouseUp(object sender, MouseEventArgs e)
         {
             f = false;

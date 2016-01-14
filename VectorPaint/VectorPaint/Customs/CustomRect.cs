@@ -64,25 +64,38 @@ namespace VectorPaint.Customs
 
         protected override void OnClick(EventArgs e)
         {
-            foreach (IShape item in this.Parent.Controls)
-            {
-                item.LostFocusMethod(e);
-            }
-            this.OnGotFocus(e);
-        }
-
-        protected override void OnLostFocus(EventArgs e)
-        {
-            BackColor = Color.White;
+            this.Focus();
         }
         protected override void OnGotFocus(EventArgs e)
         {
-            BackColor = Color.Silver;
+            this.BackColor = Color.Red;
+        }
+        protected override void OnLostFocus(EventArgs e)
+        {
+            this.BackColor = Color.White;
         }
 
-        public override void LostFocusMethod(EventArgs e)
-        {
-            OnLostFocus(e);
-        }
+        //protected override void OnClick(EventArgs e)
+        //{
+        //    foreach (IShape item in this.Parent.Controls)
+        //    {
+        //        item.LostFocusMethod(e);
+        //    }
+        //    this.OnGotFocus(e);
+        //}
+
+        //protected override void OnLostFocus(EventArgs e)
+        //{
+        //    BackColor = Color.White;
+        //}
+        //protected override void OnGotFocus(EventArgs e)
+        //{
+        //    BackColor = Color.Silver;
+        //}
+
+        //public override void LostFocusMethod(EventArgs e)
+        //{
+        //    OnLostFocus(e);
+        //}
     }
 }
