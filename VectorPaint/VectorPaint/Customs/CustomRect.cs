@@ -13,7 +13,7 @@ namespace VectorPaint.Customs
         public override string GetType { get { return "rect"; } }
         public int Thick { get; set; }
 
-        public CustomRect(int x, int y, Color color, int width,int height,int thick)
+        public CustomRect(int x, int y, Color color, int width, int height, int thick)
         {
             this.Location = new Point(x, y);
             this.BackColor = Color.White;
@@ -26,14 +26,35 @@ namespace VectorPaint.Customs
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.DrawRectangle(new Pen(this.ForeColor,Thick), 1,1, this.Width - 2 * 1, this.Width - 2 * 1);
+            g.DrawRectangle(new Pen(this.ForeColor, Thick), 1, 1, this.Width - 2 * 1, this.Height - 2 * 1);
         }
 
-        public override void DrowDrag(int widthX, int heightY)
+        public override void DrowDrag(int mouseX, int mouseY, int tabX, int tabY)
         {
-            this.Width = widthX;
-            this.Height = heightY;
-        }
+            int locationX = 0,
+                locationY = 0;
+            if (tabX < mouseX)
+            {
+                locationX = tabX;
+                this.Width = mouseX-tabX;
+            }
+            else
+            {
+                locationX = mouseX;
+                this.Width = tabX - mouseX;
+            }
+            if (tabY < mouseY)
+            {
+                locationY = tabY;
+                this.Height = mouseY - tabY;
+            }
+            else
+            {
+                locationY = mouseY;
+                this.Height = tabY - mouseY;
+            }
 
+            this.Location = new Point(locationX, locationY);
+        }
     }
 }

@@ -59,8 +59,10 @@ namespace VectorPaint
         {
             if (f)
             {
-                int newX = e.X - this.tabX, newY = e.Y - this.tabY;
-                this.currentShape.DrowDrag(newX, newY);
+                
+                //int newX = e.X - this.tabX, newY = e.Y - this.tabY;
+                
+                this.currentShape.DrowDrag(e.X,e.Y,tabX,tabY);
                 currentShape.Refresh();
                 //(sender as TabPage).Refresh();
             }
