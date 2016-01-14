@@ -7,9 +7,8 @@ using System.Windows.Forms;
 
 namespace VectorPaint.Customs
 {
-    public interface IShape
+    public abstract class IShape: Control
     {
-        XData Data { get; set; }
-        void
+        public virtual string GetType{ get;}
     }
 }
