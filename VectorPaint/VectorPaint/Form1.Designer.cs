@@ -180,16 +180,16 @@
             // 
             this.Type_pan.BackColor = System.Drawing.Color.White;
             this.Type_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Type_pan.Location = new System.Drawing.Point(4, 465);
+            this.Type_pan.Location = new System.Drawing.Point(4, 375);
             this.Type_pan.Name = "Type_pan";
-            this.Type_pan.Size = new System.Drawing.Size(250, 150);
+            this.Type_pan.Size = new System.Drawing.Size(250, 239);
             this.Type_pan.TabIndex = 2;
             // 
             // Width_pan
             // 
             this.Width_pan.BackColor = System.Drawing.Color.White;
             this.Width_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Width_pan.Location = new System.Drawing.Point(4, 313);
+            this.Width_pan.Location = new System.Drawing.Point(4, 219);
             this.Width_pan.Name = "Width_pan";
             this.Width_pan.Size = new System.Drawing.Size(250, 150);
             this.Width_pan.TabIndex = 1;
@@ -292,7 +292,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -300,7 +299,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseClick);
             this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseDown);
             this.tabPage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseMove);
             this.tabPage1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseUp);

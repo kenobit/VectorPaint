@@ -14,5 +14,9 @@ namespace VectorPaint.Customs
         {
 
         }
+        public virtual void LostFocusMethod(EventArgs e)
+        {
+
+        }
     }
 }

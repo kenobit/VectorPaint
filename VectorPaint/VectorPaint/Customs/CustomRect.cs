@@ -27,6 +27,11 @@ namespace VectorPaint.Customs
         {
             Graphics g = e.Graphics;
             g.DrawRectangle(new Pen(this.ForeColor, Thick), 1, 1, this.Width - 2 * 1, this.Height - 2 * 1);
+
+            if (this.Focused)
+            {
+                this.BackColor = Color.Green;
+            }
         }
 
         public override void DrowDrag(int mouseX, int mouseY, int tabX, int tabY)
@@ -55,6 +60,29 @@ namespace VectorPaint.Customs
             }
 
             this.Location = new Point(locationX, locationY);
+        }
+
+        protected override void OnClick(EventArgs e)
+        {
+            foreach (IShape item in this.Parent.Controls)
+            {
+                item.LostFocusMethod(e);
+            }
+            this.OnGotFocus(e);
+        }
+
+        protected override void OnLostFocus(EventArgs e)
+        {
+            BackColor = Color.White;
+        }
+        protected override void OnGotFocus(EventArgs e)
+        {
+            BackColor = Color.Silver;
+        }
+
+        public override void LostFocusMethod(EventArgs e)
+        {
+            OnLostFocus(e);
         }
     }
 }
