@@ -9,6 +9,7 @@ namespace VectorPaint.Customs
 {
     public abstract class IShape : Control
     {
+        public virtual Form MainFormLink { get; set; }
         public virtual string Type { get; }
         public virtual void DrowDrag(int mouseX, int mouseY, int tabX, int tabY)
         {

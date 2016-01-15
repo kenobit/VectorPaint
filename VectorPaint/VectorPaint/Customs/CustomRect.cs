@@ -12,6 +12,7 @@ namespace VectorPaint.Customs
     {
         public override string Type { get { return "rectangle"; } }
         public int Thick { get; set; }
+        public override Form MainFormLink { get; set; }
 
         public CustomRect(int x, int y, Color color, int width, int height, int thick)
         {
@@ -41,7 +42,7 @@ namespace VectorPaint.Customs
             if (tabX < mouseX)
             {
                 locationX = tabX;
-                this.Width = mouseX-tabX;
+                this.Width = mouseX - tabX;
             }
             else
             {
@@ -68,11 +69,20 @@ namespace VectorPaint.Customs
         }
         protected override void OnGotFocus(EventArgs e)
         {
+            (this.MainFormLink as IDataTransfer).FromFigureToBars(this as object);
+
             this.BackColor = Color.Red;
         }
         protected override void OnLostFocus(EventArgs e)
         {
             this.BackColor = Color.White;
+        }
+        private void Figure_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //(sender as IShape).MainFormLink..Show((sender as Control), new Point(e.X, e.Y));
+            }
         }
     }
 }

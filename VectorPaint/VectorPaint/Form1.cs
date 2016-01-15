@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VectorPaint.Customs;
+using System.Reflection;
+
 
 namespace VectorPaint
 {
-    public partial class MainWindow : Form
+    public partial class MainWindow : Form, IDataTransfer
     {
         public Color c = Color.Black;
         IShape currentShape = null;
-        
+        public IShape FocusedFigure { get; set; }
+        public ContextMenuStrip FigureContMenu;
+
         int tabX = 0,
             tabY = 0;
         bool f = false;
@@ -112,11 +116,13 @@ namespace VectorPaint
                 case "rectangle":
                     {
                         shape = new CustomRect(e.X, e.Y, c, 15, 15, 1);
+                        shape.MainFormLink = this;
                     }
                     break;
                 case "ellipse":
                     {
                         shape = new CustomEllipse(e.X, e.Y, c, 15, 15, 1);
+                        shape.MainFormLink = this;
                     }
                     break;
                 default:
@@ -125,6 +131,83 @@ namespace VectorPaint
             }
 
             return shape;
+        }
+
+        public void FromFigureToBars(object obj)
+        {
+            IShape figure = (obj as IShape);
+            Color_pan.BackColor = figure.ForeColor;
+            switch (figure.Type.ToLower())
+            {
+                case "rectangle":
+                    {
+                        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
+                        {
+                            if (item.Text.ToLower() == figure.Type.ToLower())
+                            {
+                                item.Checked = true;
+                            }
+                            else
+                            {
+                                item.Checked = false;
+                            }
+                        }
+                    }
+                    break;
+                case "ellipse":
+                    {
+                        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
+                        {
+                            if (item.Text.ToLower() == figure.Type.ToLower())
+                            {
+                                item.Checked = true;
+                            }
+                            else
+                            {
+                                item.Checked = false;
+                            }
+                        }
+                    }
+                    break;
+                //case "roundrect":
+                //    {
+                //        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
+                //        {
+                //            if (item.Text == figure.Type.ToLower())
+                //            {
+                //                item.Checked = true;
+                //            }
+                //        }
+                //    }
+                //    break;
+                //case "line":
+                //    {
+                //        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
+                //        {
+                //            if (item.Text == figure.Type.ToLower())
+                //            {
+                //                item.Checked = true;
+                //            }
+                //        }
+                //    }
+                //    break;
+                //case "curve":
+                //    {
+                //        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
+                //        {
+                //            if (item.Text == figure.Type.ToLower())
+                //            {
+                //                item.Checked = true;
+                //            }
+                //        }
+                //    }
+                //    break;
+                default:
+                    break;
+            }
+
+
+            Width_tb.Text = figure.ForeColor.ToString();
         }
     }
 }
