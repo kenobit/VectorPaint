@@ -11,9 +11,11 @@ namespace VectorPaint.Customs
     {
         public virtual Form MainFormLink { get; set; }
         public virtual string Type { get; }
+        public virtual XData Data { get; set; }
         public virtual void DrowDrag(int mouseX, int mouseY, int tabX, int tabY)
         {
 
         }
+        public virtual ContextMenuStrip MenuContext { get; set; }
     }
 }

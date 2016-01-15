@@ -13,25 +13,54 @@ namespace VectorPaint.Customs
         public override string Type { get { return "rectangle"; } }
         public int Thick { get; set; }
         public override Form MainFormLink { get; set; }
+        public override XData Data { get; set; }
+        public override ContextMenuStrip MenuContext { get; set; }
+        private bool isMoving = false;
+        private bool isResizing = false;
+        private Color resizeRectColor = Color.Transparent;
+
+        int mX = 0,
+            mY = 0;
 
         public CustomRect(int x, int y, Color color, int width, int height, int thick)
         {
-            this.Location = new Point(x, y);
+            Data = new XData();
+            Data.PointX = x;
+            Data.PointY = y;
+            Data.ColorR = color.R;
+            Data.ColorG = color.G;
+            Data.ColorB = color.B;
+            Data.SizeX = width;
+            Data.SizeY = height;
+            Data.Width = thick;
+
+            this.Location = new Point(this.Data.PointX, this.Data.PointY);
             this.BackColor = Color.White;
-            this.ForeColor = color;
-            this.Thick = thick;
-            this.Width = width;
-            this.Height = height;
+            this.ForeColor = Color.FromArgb(this.Data.ColorR, this.Data.ColorG, this.Data.ColorB);
+            this.Thick = this.Data.Width;
+            this.Width = this.Data.SizeX;
+            this.Height = this.Data.SizeY;
+        }
+
+        public CustomRect(XData Data)
+        {
+            this.Location = new Point(Data.PointX, Data.PointY);
+            this.BackColor = Color.White;
+            this.ForeColor = Color.FromArgb(Data.ColorR, Data.ColorG, Data.ColorB);
+            this.Thick = Data.Width;
+            this.Width = Data.SizeX;
+            this.Height = Data.SizeY;
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             g.DrawRectangle(new Pen(this.ForeColor, Thick), 1, 1, this.Width - 2 * 1, this.Height - 2 * 1);
+            g.DrawRectangle(new Pen(this.resizeRectColor, 5), this.Width - 15 * 1, this.Height - 15 * 1, 10, 10);
 
             if (this.Focused)
             {
-                this.BackColor = Color.Green;
+                this.BackColor = Color.Azure;
             }
         }
 
@@ -77,12 +106,54 @@ namespace VectorPaint.Customs
         {
             this.BackColor = Color.White;
         }
-        private void Figure_MouseClick(object sender, MouseEventArgs e)
+        protected override void OnMouseDown(MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                //(sender as IShape).MainFormLink..Show((sender as Control), new Point(e.X, e.Y));
+                MenuContext.Show(this, new Point(e.X, e.Y));
             }
+            else
+            {
+                if (e.X >= this.Width - 20 && e.Y >= this.Height - 20)
+                {
+                    isResizing = true;
+                }
+                else
+                {
+                    isMoving = true;
+                    
+                }
+                mX = e.X;
+                mY = e.Y;
+            }
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            if (isMoving)
+            {
+                this.Location = new Point(Location.X + (e.X - mX), Location.Y + (e.Y - mY));
+            }
+            if (isResizing)
+            {
+                this.Width = e.X;
+                this.Height = e.Y;
+                this.Refresh();
+            }
+        }
+
+        protected override void OnMouseHover(EventArgs e)
+        {
+            this.resizeRectColor = Color.Gray;
+        }
+        protected override void OnLeave(EventArgs e)
+        {
+            this.resizeRectColor = Color.Transparent;
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            this.isMoving = false;
+            this.isResizing = false;
         }
     }
 }

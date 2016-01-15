@@ -12,7 +12,11 @@ namespace VectorPaint.Customs
         public int ColorR { get; set; }
         public int ColorG { get; set; }
         public int ColorB { get; set; }
-        public int Thick { get; set; }
+
+        public XData()
+        {
+
+        }
 
         public XData(int pointX, int pointY, int sizeX, int sizeY, int width, Color color)
         {
@@ -24,7 +28,6 @@ namespace VectorPaint.Customs
             this.ColorR = color.R;
             this.ColorG = color.G;
             this.ColorB = color.B;
-            this.Thick = width;
         }
     }
 }

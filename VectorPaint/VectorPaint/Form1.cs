@@ -16,9 +16,9 @@ namespace VectorPaint
     public partial class MainWindow : Form, IDataTransfer
     {
         public Color c = Color.Black;
+        public int Thick = 1;
         IShape currentShape = null;
         public IShape FocusedFigure { get; set; }
-        public ContextMenuStrip FigureContMenu;
 
         int tabX = 0,
             tabY = 0;
@@ -77,10 +77,11 @@ namespace VectorPaint
 
         private void TabMouseDown(object sender, MouseEventArgs e)
         {
+            this.Focus();
             this.tabX = e.X;
             this.tabY = e.Y;
             IShape shape = SelectedFigureCheck(e);
-
+            shape.MenuContext = FigureContextMenu;
             this.currentShape = shape;
             (sender as TabPage).Controls.Add(shape);
             CurrentTabControls = (sender as TabPage).Controls;
@@ -111,26 +112,37 @@ namespace VectorPaint
                     sw = radio.Text;
                 }
             }
+            Thick = Width_tb.Text == "" ? 1 : Convert.ToInt32(Width_tb.Text);
             switch (sw.ToLower())
             {
                 case "rectangle":
                     {
-                        shape = new CustomRect(e.X, e.Y, c, 15, 15, 1);
+                        shape = new CustomRect(e.X, e.Y, c, 15, 15, Thick);
                         shape.MainFormLink = this;
                     }
                     break;
                 case "ellipse":
                     {
-                        shape = new CustomEllipse(e.X, e.Y, c, 15, 15, 1);
+                        shape = new CustomEllipse(e.X, e.Y, c, 15, 15, Thick);
                         shape.MainFormLink = this;
                     }
                     break;
                 default:
-                    shape = new CustomRect(e.X, e.Y, c, 15, 15, 1);
+                    shape = new CustomRect(e.X, e.Y, c, 15, 15, Thick);
                     break;
             }
 
             return shape;
+        }
+
+        private void figureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ColorClickContextMenuEvent(object sender, EventArgs e)
+        {
+            this.currentShape.ForeColor = Color.FromName((sender as ToolStripMenuItem).Text);
         }
 
         public void FromFigureToBars(object obj)
@@ -169,45 +181,12 @@ namespace VectorPaint
                         }
                     }
                     break;
-                //case "roundrect":
-                //    {
-                //        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
-                //        {
-                //            if (item.Text == figure.Type.ToLower())
-                //            {
-                //                item.Checked = true;
-                //            }
-                //        }
-                //    }
-                //    break;
-                //case "line":
-                //    {
-                //        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
-                //        {
-                //            if (item.Text == figure.Type.ToLower())
-                //            {
-                //                item.Checked = true;
-                //            }
-                //        }
-                //    }
-                //    break;
-                //case "curve":
-                //    {
-                //        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
-                //        {
-                //            if (item.Text == figure.Type.ToLower())
-                //            {
-                //                item.Checked = true;
-                //            }
-                //        }
-                //    }
-                //    break;
+               
                 default:
                     break;
             }
 
-
-            Width_tb.Text = figure.ForeColor.ToString();
+            Width_tb.Text = figure.Data.Width.ToString();
         }
     }
 }

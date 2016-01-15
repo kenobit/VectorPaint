@@ -399,7 +399,7 @@
             this.widthToolStripMenuItem1,
             this.colorToolStripMenuItem1});
             this.FigureContextMenu.Name = "contextMenuStrip1";
-            this.FigureContextMenu.Size = new System.Drawing.Size(108, 70);
+            this.FigureContextMenu.Size = new System.Drawing.Size(153, 92);
             this.FigureContextMenu.UseWaitCursor = true;
             // 
             // figureToolStripMenuItem
@@ -411,8 +411,9 @@
             this.lineToolStripMenuItem,
             this.curveToolStripMenuItem});
             this.figureToolStripMenuItem.Name = "figureToolStripMenuItem";
-            this.figureToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.figureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.figureToolStripMenuItem.Text = "Figure";
+            this.figureToolStripMenuItem.Click += new System.EventHandler(this.figureToolStripMenuItem_Click);
             // 
             // rectangleToolStripMenuItem
             // 
@@ -498,38 +499,43 @@
             this.blackToolStripMenuItem,
             this.yellowToolStripMenuItem});
             this.colorToolStripMenuItem1.Name = "colorToolStripMenuItem1";
-            this.colorToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.colorToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.colorToolStripMenuItem1.Text = "Color";
             // 
             // redToolStripMenuItem
             // 
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.redToolStripMenuItem.Text = "Red";
+            this.redToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.blueToolStripMenuItem.Text = "Blue";
+            this.blueToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // greenToolStripMenuItem
             // 
             this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            this.greenToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.greenToolStripMenuItem.Text = "Green";
+            this.greenToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // blackToolStripMenuItem
             // 
             this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            this.blackToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.blackToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.blackToolStripMenuItem.Text = "Black";
+            this.blackToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // yellowToolStripMenuItem
             // 
             this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
-            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.yellowToolStripMenuItem.Text = "Yellow";
+            this.yellowToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // Width_lb
             // 
