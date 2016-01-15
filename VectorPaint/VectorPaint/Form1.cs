@@ -15,7 +15,8 @@ namespace VectorPaint
     {
         public Color c = Color.Black;
         IShape currentShape = null;
-        int tabX = 0, 
+        
+        int tabX = 0,
             tabY = 0;
         bool f = false;
         TabPage.ControlCollection CurrentTabControls;
@@ -27,9 +28,14 @@ namespace VectorPaint
 
         private void Color_pan_Click(object sender, EventArgs e)
         {
+            ColorDialogInvoker();
+        }
+
+        private void ColorDialogInvoker()
+        {
             if (ColorDialog.ShowDialog() == DialogResult.OK)
             {
-                (sender as Control).BackColor = ColorDialog.Color;
+                Color_pan.BackColor = ColorDialog.Color;
                 c = ColorDialog.Color;
             }
         }
@@ -48,10 +54,10 @@ namespace VectorPaint
         {
             Tabs_tc.SelectedTab.Controls.Clear();
         }
-        
+
         private void AddTab_btn_Click(object sender, EventArgs e)
         {
-            TabPage tp = new TabPage("new page");
+            TabPage tp = new TabPage("Tab #" + (Tabs_tc.TabCount + 1).ToString());
             tp.BackColor = Color.White;
             tp.MouseMove += TabMouseMove;
             tp.MouseUp += TabMouseUp;
@@ -70,8 +76,8 @@ namespace VectorPaint
             this.tabX = e.X;
             this.tabY = e.Y;
             IShape shape = SelectedFigureCheck(e);
-            
-             this.currentShape = shape;
+
+            this.currentShape = shape;
             (sender as TabPage).Controls.Add(shape);
             CurrentTabControls = (sender as TabPage).Controls;
             f = true;

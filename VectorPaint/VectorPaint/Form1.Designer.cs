@@ -36,12 +36,13 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.positionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.widthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar = new System.Windows.Forms.ToolStrip();
             this.Save_ = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.Color_btn = new System.Windows.Forms.ToolStripButton();
             this.LeftPanel_pan = new System.Windows.Forms.Panel();
             this.Type_pan = new System.Windows.Forms.Panel();
             this.Width_pan = new System.Windows.Forms.Panel();
@@ -59,6 +60,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Tabs_tc = new System.Windows.Forms.TabControl();
             this.AddTab = new System.Windows.Forms.Button();
+            this.tabsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuBar.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.LeftPanel_pan.SuspendLayout();
@@ -72,10 +74,10 @@
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.colorToolStripMenuItem,
-            this.positionToolStripMenuItem,
             this.typeToolStripMenuItem,
             this.tabsToolStripMenuItem,
-            this.widthToolStripMenuItem});
+            this.widthToolStripMenuItem,
+            this.tabsToolStripMenuItem1});
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Size = new System.Drawing.Size(995, 24);
@@ -122,12 +124,7 @@
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
             this.colorToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.colorToolStripMenuItem.Text = "Color";
-            // 
-            // positionToolStripMenuItem
-            // 
-            this.positionToolStripMenuItem.Name = "positionToolStripMenuItem";
-            this.positionToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.positionToolStripMenuItem.Text = "Position";
+            this.colorToolStripMenuItem.Click += new System.EventHandler(this.Color_pan_Click);
             // 
             // typeToolStripMenuItem
             // 
@@ -150,7 +147,9 @@
             // ToolBar
             // 
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Save_});
+            this.Save_,
+            this.toolStripButton1,
+            this.Color_btn});
             this.ToolBar.Location = new System.Drawing.Point(0, 24);
             this.ToolBar.Name = "ToolBar";
             this.ToolBar.Size = new System.Drawing.Size(995, 25);
@@ -159,12 +158,31 @@
             // 
             // Save_
             // 
-            this.Save_.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Save_.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.Save_.Image = ((System.Drawing.Image)(resources.GetObject("Save_.Image")));
             this.Save_.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Save_.Name = "Save_";
-            this.Save_.Size = new System.Drawing.Size(23, 22);
+            this.Save_.Size = new System.Drawing.Size(35, 22);
             this.Save_.Text = "Save";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(37, 22);
+            this.toolStripButton1.Text = "Load";
+            // 
+            // Color_btn
+            // 
+            this.Color_btn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Color_btn.Image = ((System.Drawing.Image)(resources.GetObject("Color_btn.Image")));
+            this.Color_btn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Color_btn.Name = "Color_btn";
+            this.Color_btn.Size = new System.Drawing.Size(40, 22);
+            this.Color_btn.Text = "Color";
+            this.Color_btn.Click += new System.EventHandler(this.Color_pan_Click);
             // 
             // LeftPanel_pan
             // 
@@ -297,7 +315,7 @@
             // 
             // Clear_btn
             // 
-            this.Clear_btn.Location = new System.Drawing.Point(931, 52);
+            this.Clear_btn.Location = new System.Drawing.Point(931, 50);
             this.Clear_btn.Name = "Clear_btn";
             this.Clear_btn.Size = new System.Drawing.Size(59, 20);
             this.Clear_btn.TabIndex = 4;
@@ -307,12 +325,13 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.tabPage1.Location = new System.Drawing.Point(4, 19);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(726, 607);
+            this.tabPage1.Size = new System.Drawing.Size(726, 610);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Tab #1";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabPage_MouseDown);
             this.tabPage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabPage_MouseMove);
@@ -321,21 +340,31 @@
             // Tabs_tc
             // 
             this.Tabs_tc.Controls.Add(this.tabPage1);
+            this.Tabs_tc.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.Tabs_tc.ItemSize = new System.Drawing.Size(100, 15);
             this.Tabs_tc.Location = new System.Drawing.Point(260, 52);
+            this.Tabs_tc.Multiline = true;
             this.Tabs_tc.Name = "Tabs_tc";
             this.Tabs_tc.SelectedIndex = 0;
             this.Tabs_tc.Size = new System.Drawing.Size(734, 633);
+            this.Tabs_tc.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Tabs_tc.TabIndex = 3;
             // 
             // AddTab
             // 
-            this.AddTab.Location = new System.Drawing.Point(911, 52);
+            this.AddTab.Location = new System.Drawing.Point(911, 50);
             this.AddTab.Name = "AddTab";
             this.AddTab.Size = new System.Drawing.Size(20, 20);
             this.AddTab.TabIndex = 5;
             this.AddTab.Text = "+";
             this.AddTab.UseVisualStyleBackColor = true;
             this.AddTab.Click += new System.EventHandler(this.AddTab_btn_Click);
+            // 
+            // tabsToolStripMenuItem1
+            // 
+            this.tabsToolStripMenuItem1.Name = "tabsToolStripMenuItem1";
+            this.tabsToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
+            this.tabsToolStripMenuItem1.Text = "Tabs";
             // 
             // MainWindow
             // 
@@ -383,7 +412,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem positionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem typeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabsToolStripMenuItem;
         private System.Windows.Forms.Panel Type_pan;
@@ -401,6 +429,9 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl Tabs_tc;
         private System.Windows.Forms.Button AddTab;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton Color_btn;
+        private System.Windows.Forms.ToolStripMenuItem tabsToolStripMenuItem1;
     }
 }
 
