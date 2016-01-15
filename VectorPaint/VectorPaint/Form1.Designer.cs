@@ -48,6 +48,8 @@
             this.LeftPanel_pan = new System.Windows.Forms.Panel();
             this.Type_pan = new System.Windows.Forms.Panel();
             this.Width_pan = new System.Windows.Forms.Panel();
+            this.Width_tb = new System.Windows.Forms.TextBox();
+            this.Width_lb = new System.Windows.Forms.Label();
             this.Figures_pan = new System.Windows.Forms.Panel();
             this.FigureCheck_radioRegion = new System.Windows.Forms.GroupBox();
             this.radioCurve = new System.Windows.Forms.RadioButton();
@@ -81,8 +83,14 @@
             this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Width_lb = new System.Windows.Forms.Label();
-            this.Width_tb = new System.Windows.Forms.TextBox();
+            this.PointX_tb = new System.Windows.Forms.TextBox();
+            this.PointX_lb = new System.Windows.Forms.Label();
+            this.PointY_tb = new System.Windows.Forms.TextBox();
+            this.PointY_lb = new System.Windows.Forms.Label();
+            this.SizeX_tb = new System.Windows.Forms.TextBox();
+            this.SizeX_lb = new System.Windows.Forms.Label();
+            this.SizeY_tb = new System.Windows.Forms.TextBox();
+            this.SizeY_lb = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.LeftPanel_pan.SuspendLayout();
@@ -238,12 +246,36 @@
             // 
             this.Width_pan.BackColor = System.Drawing.Color.White;
             this.Width_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Width_pan.Controls.Add(this.SizeY_tb);
+            this.Width_pan.Controls.Add(this.SizeY_lb);
+            this.Width_pan.Controls.Add(this.SizeX_tb);
+            this.Width_pan.Controls.Add(this.SizeX_lb);
+            this.Width_pan.Controls.Add(this.PointY_tb);
+            this.Width_pan.Controls.Add(this.PointY_lb);
+            this.Width_pan.Controls.Add(this.PointX_tb);
+            this.Width_pan.Controls.Add(this.PointX_lb);
             this.Width_pan.Controls.Add(this.Width_tb);
             this.Width_pan.Controls.Add(this.Width_lb);
             this.Width_pan.Location = new System.Drawing.Point(4, 219);
             this.Width_pan.Name = "Width_pan";
             this.Width_pan.Size = new System.Drawing.Size(250, 150);
             this.Width_pan.TabIndex = 1;
+            // 
+            // Width_tb
+            // 
+            this.Width_tb.Location = new System.Drawing.Point(118, 12);
+            this.Width_tb.Name = "Width_tb";
+            this.Width_tb.Size = new System.Drawing.Size(100, 20);
+            this.Width_tb.TabIndex = 2;
+            // 
+            // Width_lb
+            // 
+            this.Width_lb.AutoSize = true;
+            this.Width_lb.Location = new System.Drawing.Point(15, 12);
+            this.Width_lb.Name = "Width_lb";
+            this.Width_lb.Size = new System.Drawing.Size(35, 13);
+            this.Width_lb.TabIndex = 1;
+            this.Width_lb.Text = "Width";
             // 
             // Figures_pan
             // 
@@ -399,7 +431,7 @@
             this.widthToolStripMenuItem1,
             this.colorToolStripMenuItem1});
             this.FigureContextMenu.Name = "contextMenuStrip1";
-            this.FigureContextMenu.Size = new System.Drawing.Size(153, 92);
+            this.FigureContextMenu.Size = new System.Drawing.Size(108, 70);
             this.FigureContextMenu.UseWaitCursor = true;
             // 
             // figureToolStripMenuItem
@@ -411,41 +443,41 @@
             this.lineToolStripMenuItem,
             this.curveToolStripMenuItem});
             this.figureToolStripMenuItem.Name = "figureToolStripMenuItem";
-            this.figureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.figureToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.figureToolStripMenuItem.Text = "Figure";
             this.figureToolStripMenuItem.Click += new System.EventHandler(this.figureToolStripMenuItem_Click);
             // 
             // rectangleToolStripMenuItem
             // 
             this.rectangleToolStripMenuItem.Name = "rectangleToolStripMenuItem";
-            this.rectangleToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.rectangleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rectangleToolStripMenuItem.Text = "Rectangle";
             // 
             // ellipseToolStripMenuItem
             // 
             this.ellipseToolStripMenuItem.Name = "ellipseToolStripMenuItem";
-            this.ellipseToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.ellipseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ellipseToolStripMenuItem.Text = "Ellipse";
             // 
             // roundRectToolStripMenuItem
             // 
             this.roundRectToolStripMenuItem.Enabled = false;
             this.roundRectToolStripMenuItem.Name = "roundRectToolStripMenuItem";
-            this.roundRectToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.roundRectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.roundRectToolStripMenuItem.Text = "RoundRect";
             // 
             // lineToolStripMenuItem
             // 
             this.lineToolStripMenuItem.Enabled = false;
             this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
-            this.lineToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.lineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.lineToolStripMenuItem.Text = "Line";
             // 
             // curveToolStripMenuItem
             // 
             this.curveToolStripMenuItem.Enabled = false;
             this.curveToolStripMenuItem.Name = "curveToolStripMenuItem";
-            this.curveToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.curveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.curveToolStripMenuItem.Text = "Curve";
             // 
             // widthToolStripMenuItem1
@@ -463,32 +495,37 @@
             // pxToolStripMenuItem
             // 
             this.pxToolStripMenuItem.Name = "pxToolStripMenuItem";
-            this.pxToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.pxToolStripMenuItem.Text = "1px";
+            this.pxToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pxToolStripMenuItem.Text = "1";
+            this.pxToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // pxToolStripMenuItem1
             // 
             this.pxToolStripMenuItem1.Name = "pxToolStripMenuItem1";
-            this.pxToolStripMenuItem1.Size = new System.Drawing.Size(92, 22);
-            this.pxToolStripMenuItem1.Text = "2px";
+            this.pxToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.pxToolStripMenuItem1.Text = "2";
+            this.pxToolStripMenuItem1.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // pxToolStripMenuItem2
             // 
             this.pxToolStripMenuItem2.Name = "pxToolStripMenuItem2";
-            this.pxToolStripMenuItem2.Size = new System.Drawing.Size(92, 22);
-            this.pxToolStripMenuItem2.Text = "3px";
+            this.pxToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.pxToolStripMenuItem2.Text = "3";
+            this.pxToolStripMenuItem2.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // pxToolStripMenuItem3
             // 
             this.pxToolStripMenuItem3.Name = "pxToolStripMenuItem3";
-            this.pxToolStripMenuItem3.Size = new System.Drawing.Size(92, 22);
-            this.pxToolStripMenuItem3.Text = "4px";
+            this.pxToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.pxToolStripMenuItem3.Text = "4";
+            this.pxToolStripMenuItem3.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // pxToolStripMenuItem4
             // 
             this.pxToolStripMenuItem4.Name = "pxToolStripMenuItem4";
-            this.pxToolStripMenuItem4.Size = new System.Drawing.Size(92, 22);
-            this.pxToolStripMenuItem4.Text = "5px";
+            this.pxToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.pxToolStripMenuItem4.Text = "5";
+            this.pxToolStripMenuItem4.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // colorToolStripMenuItem1
             // 
@@ -499,59 +536,107 @@
             this.blackToolStripMenuItem,
             this.yellowToolStripMenuItem});
             this.colorToolStripMenuItem1.Name = "colorToolStripMenuItem1";
-            this.colorToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.colorToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.colorToolStripMenuItem1.Text = "Color";
             // 
             // redToolStripMenuItem
             // 
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.redToolStripMenuItem.Text = "Red";
             this.redToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.blueToolStripMenuItem.Text = "Blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // greenToolStripMenuItem
             // 
             this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            this.greenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.greenToolStripMenuItem.Text = "Green";
             this.greenToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // blackToolStripMenuItem
             // 
             this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-            this.blackToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.blackToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.blackToolStripMenuItem.Text = "Black";
             this.blackToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // yellowToolStripMenuItem
             // 
             this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
-            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.yellowToolStripMenuItem.Text = "Yellow";
             this.yellowToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
-            // Width_lb
+            // PointX_tb
             // 
-            this.Width_lb.AutoSize = true;
-            this.Width_lb.Location = new System.Drawing.Point(15, 12);
-            this.Width_lb.Name = "Width_lb";
-            this.Width_lb.Size = new System.Drawing.Size(35, 13);
-            this.Width_lb.TabIndex = 1;
-            this.Width_lb.Text = "Width";
+            this.PointX_tb.Location = new System.Drawing.Point(118, 38);
+            this.PointX_tb.Name = "PointX_tb";
+            this.PointX_tb.Size = new System.Drawing.Size(100, 20);
+            this.PointX_tb.TabIndex = 4;
             // 
-            // Width_tb
+            // PointX_lb
             // 
-            this.Width_tb.Location = new System.Drawing.Point(118, 12);
-            this.Width_tb.Name = "Width_tb";
-            this.Width_tb.Size = new System.Drawing.Size(100, 20);
-            this.Width_tb.TabIndex = 2;
+            this.PointX_lb.AutoSize = true;
+            this.PointX_lb.Location = new System.Drawing.Point(15, 38);
+            this.PointX_lb.Name = "PointX_lb";
+            this.PointX_lb.Size = new System.Drawing.Size(41, 13);
+            this.PointX_lb.TabIndex = 3;
+            this.PointX_lb.Text = "Point X";
+            // 
+            // PointY_tb
+            // 
+            this.PointY_tb.Location = new System.Drawing.Point(118, 64);
+            this.PointY_tb.Name = "PointY_tb";
+            this.PointY_tb.Size = new System.Drawing.Size(100, 20);
+            this.PointY_tb.TabIndex = 6;
+            // 
+            // PointY_lb
+            // 
+            this.PointY_lb.AutoSize = true;
+            this.PointY_lb.Location = new System.Drawing.Point(15, 64);
+            this.PointY_lb.Name = "PointY_lb";
+            this.PointY_lb.Size = new System.Drawing.Size(41, 13);
+            this.PointY_lb.TabIndex = 5;
+            this.PointY_lb.Text = "Point Y";
+            // 
+            // SizeX_tb
+            // 
+            this.SizeX_tb.Location = new System.Drawing.Point(118, 90);
+            this.SizeX_tb.Name = "SizeX_tb";
+            this.SizeX_tb.Size = new System.Drawing.Size(100, 20);
+            this.SizeX_tb.TabIndex = 8;
+            // 
+            // SizeX_lb
+            // 
+            this.SizeX_lb.AutoSize = true;
+            this.SizeX_lb.Location = new System.Drawing.Point(15, 90);
+            this.SizeX_lb.Name = "SizeX_lb";
+            this.SizeX_lb.Size = new System.Drawing.Size(37, 13);
+            this.SizeX_lb.TabIndex = 7;
+            this.SizeX_lb.Text = "Size X";
+            // 
+            // SizeY_tb
+            // 
+            this.SizeY_tb.Location = new System.Drawing.Point(118, 116);
+            this.SizeY_tb.Name = "SizeY_tb";
+            this.SizeY_tb.Size = new System.Drawing.Size(100, 20);
+            this.SizeY_tb.TabIndex = 10;
+            // 
+            // SizeY_lb
+            // 
+            this.SizeY_lb.AutoSize = true;
+            this.SizeY_lb.Location = new System.Drawing.Point(15, 116);
+            this.SizeY_lb.Name = "SizeY_lb";
+            this.SizeY_lb.Size = new System.Drawing.Size(37, 13);
+            this.SizeY_lb.TabIndex = 9;
+            this.SizeY_lb.Text = "Size Y";
             // 
             // MainWindow
             // 
@@ -643,6 +728,14 @@
         private System.Windows.Forms.ToolStripMenuItem yellowToolStripMenuItem;
         private System.Windows.Forms.TextBox Width_tb;
         private System.Windows.Forms.Label Width_lb;
+        private System.Windows.Forms.TextBox SizeY_tb;
+        private System.Windows.Forms.Label SizeY_lb;
+        private System.Windows.Forms.TextBox SizeX_tb;
+        private System.Windows.Forms.Label SizeX_lb;
+        private System.Windows.Forms.TextBox PointY_tb;
+        private System.Windows.Forms.Label PointY_lb;
+        private System.Windows.Forms.TextBox PointX_tb;
+        private System.Windows.Forms.Label PointX_lb;
     }
 }
 

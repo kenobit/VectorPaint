@@ -145,10 +145,17 @@ namespace VectorPaint
             this.currentShape.ForeColor = Color.FromName((sender as ToolStripMenuItem).Text);
         }
 
+        private void ContextMenuWidthClickEvent(object sender, EventArgs e)
+        {
+            
+        }
+
         public void FromFigureToBars(object obj)
         {
             IShape figure = (obj as IShape);
             Color_pan.BackColor = figure.ForeColor;
+
+            #region switch
             switch (figure.Type.ToLower())
             {
                 case "rectangle":
@@ -185,7 +192,12 @@ namespace VectorPaint
                 default:
                     break;
             }
+            #endregion
 
+            SizeX_tb.Text = figure.Data.SizeX.ToString();
+            SizeY_tb.Text = figure.Data.SizeY.ToString();
+            PointX_tb.Text = figure.Data.PointX.ToString();
+            PointY_tb.Text = figure.Data.PointY.ToString();
             Width_tb.Text = figure.Data.Width.ToString();
         }
     }
