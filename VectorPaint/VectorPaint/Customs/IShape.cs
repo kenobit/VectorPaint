@@ -14,5 +14,7 @@ namespace VectorPaint.Customs
         {
 
         }
+
+        public XData Data { get; set; }
     }
 }

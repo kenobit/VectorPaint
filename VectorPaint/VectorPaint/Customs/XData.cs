@@ -1,7 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace VectorPaint.Customs
 {
+    [Serializable]
     public class XData
     {
         public int PointX { get; set; }
@@ -9,7 +11,10 @@ namespace VectorPaint.Customs
         public int Width { get; set; }
         public int SizeX { get; set; }
         public int SizeY { get; set; }
-        public Color Color { get; set; }
+        public int ColorR { get; set; }
+        public int ColorG { get; set; }
+        public int ColorB { get; set; }
+        public int Thick { get; set; }
 
         public XData(int pointX,int pointY,int sizeX,int sizeY,int width,Color color)
         {
@@ -18,7 +23,10 @@ namespace VectorPaint.Customs
             this.SizeX = sizeX;
             this.SizeY = sizeY;
             this.Width = width;
-            this.Color = color;
+            this.ColorR = color.R;
+            this.ColorG = color.G;
+            this.ColorB = color.B;
+            this.Thick = width;
         }
     }
 }

@@ -90,6 +90,42 @@ namespace VectorPaint
             }
         }
 
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SaveState();
+            saveFileDialog1.Filter = "XML files | *.xml | JSON files | *.json | CSV files | *.csv | YAML files | *.yaml ";
+
+            if (saveFileDialog1.ShowDialog() != DialogResult.OK) return;
+            string ext = saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.LastIndexOf('.') + 1);
+
+            Factory cr = new Factory();
+            cr.Format(ext.ToUpper());
+            cr.To(mem.GetState, saveFileDialog1.FileName);
+        }
+
+        Memento mem;
+
+        public void SaveState()
+        {
+            var list = new List<XData>();
+            foreach (var item in currentShape.Controls)
+            {
+                list.Add(item.XData() { dx = item.dx, dy = item.dy, radius = item.radius, x = item.X, y = item.Y });
+            }
+
+            mem = new Memento(list);
+        }
+
+        public void LoadState()
+        {
+            Balls = new List<BouncingBallClass>();
+
+            foreach (var item in mem.GetState)
+            {
+                Balls.Add(new BouncingBallClass() { dx = item.dx, dy = item.dy, radius = item.radius, X = item.x, Y = item.y });
+            }
+        }
+
         private IShape SelectedFigureCheck(MouseEventArgs e)
         {
             IShape shape = null;
@@ -105,7 +141,7 @@ namespace VectorPaint
             {
                 case "rectangle":
                     {
-                        shape = new CustomRect(e.X, e.Y, c, 15, 15, 1);
+                        shape = new CustomRect(e.X, e.Y, c, 15, 15, 5);
                     }
                     break;
                 case "ellipse":

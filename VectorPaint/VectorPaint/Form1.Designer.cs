@@ -59,6 +59,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Tabs_tc = new System.Windows.Forms.TabControl();
             this.AddTab = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.MenuBar.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.LeftPanel_pan.SuspendLayout();
@@ -337,11 +339,22 @@
             this.AddTab.UseVisualStyleBackColor = true;
             this.AddTab.Click += new System.EventHandler(this.AddTab_btn_Click);
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(912, 31);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(77, 21);
+            this.buttonSave.TabIndex = 6;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 689);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.AddTab);
             this.Controls.Add(this.Clear_btn);
             this.Controls.Add(this.label1);
@@ -401,6 +414,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl Tabs_tc;
         private System.Windows.Forms.Button AddTab;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
