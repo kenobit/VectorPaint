@@ -11,6 +11,7 @@ using VectorPaint.Customs;
 using System.Reflection;
 using System.Threading;
 using System.Globalization;
+using VectorPaint.skins;
 
 namespace VectorPaint
 {
@@ -433,11 +434,24 @@ namespace VectorPaint
                 manager.ApplyResources(item, (item as ToolStripMenuItem).Name);
             }
         }
+
         private static void ApplyResourcesToolsItems(ComponentResourceManager manager, ToolStripItemCollection items)
         {
             foreach (var item in items)
             {
                 manager.ApplyResources(item, (item as ToolStripItem).Name);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ISkin theme = new Dark();
+            foreach (Form frm in Application.OpenForms)
+            {
+                foreach(Control ctrl in frm.Controls)
+                {
+                    ctrl.BackColor = theme.ButtonBGColor;
+                }
             }
         }
 

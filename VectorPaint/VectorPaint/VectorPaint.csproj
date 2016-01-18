@@ -90,8 +90,13 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="skins\Dark.cs" />
+    <Compile Include="skins\ISkin.cs" />
     <Compile Include="XML.cs" />
     <Compile Include="YAML.cs" />
+    <EmbeddedResource Include="Form1.hsb.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
