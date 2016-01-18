@@ -1,9 +1,12 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace VectorPaint.Customs
 {
+    [Serializable]
     public class XData
     {
+        public string Type { get; set; }
         public int PointX { get; set; }
         public int PointY { get; set; }
         public int Width { get; set; }

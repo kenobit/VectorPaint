@@ -19,15 +19,16 @@ namespace VectorPaint
         public int Thick = 1;
         IShape currentShape = null;
         public IShape FocusedFigure { get; set; }
-
+        List<IShape> figures = new List<IShape>();
         int tabX = 0,
             tabY = 0;
         bool f = false;
-        TabPage.ControlCollection CurrentTabControls;
+        TabPage.ControlCollection CurrentTabControls = null;
 
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Color_pan_Click(object sender, EventArgs e)
@@ -85,6 +86,7 @@ namespace VectorPaint
             this.currentShape = shape;
             (sender as TabPage).Controls.Add(shape);
             CurrentTabControls = (sender as TabPage).Controls;
+            buttonSave.Enabled = true;
             f = true;
         }
         private void TabMouseUp(object sender, MouseEventArgs e)
@@ -127,6 +129,12 @@ namespace VectorPaint
                         shape.MainFormLink = this;
                     }
                     break;
+                case "line":
+                    {
+                        shape = new CustomLine(e.X, e.Y, c, 15, 15, Thick);
+                        shape.MainFormLink = this;
+                    }
+                    break;
                 default:
                     shape = new CustomRect(e.X, e.Y, c, 15, 15, Thick);
                     break;
@@ -137,6 +145,7 @@ namespace VectorPaint
 
         private void figureToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Sorry, feature does not implemented yet");
 
         }
 
@@ -147,7 +156,8 @@ namespace VectorPaint
 
         private void ContextMenuWidthClickEvent(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("Sorry, feature does not implemented yet");
+
         }
 
         public void FromFigureToBars(object obj)
@@ -188,7 +198,22 @@ namespace VectorPaint
                         }
                     }
                     break;
-               
+                case "line":
+                    {
+                        foreach (RadioButton item in FigureCheck_radioRegion.Controls)
+                        {
+                            if (item.Text.ToLower() == figure.Type.ToLower())
+                            {
+                                item.Checked = true;
+                            }
+                            else
+                            {
+                                item.Checked = false;
+                            }
+                        }
+                    }
+                    break;
+
                 default:
                     break;
             }
@@ -199,6 +224,135 @@ namespace VectorPaint
             PointX_tb.Text = figure.Data.PointX.ToString();
             PointY_tb.Text = figure.Data.PointY.ToString();
             Width_tb.Text = figure.Data.Width.ToString();
+        }
+
+
+
+        Memento mem;
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (Tabs_tc.SelectedTab.Controls.Count == 0)
+            {
+                MessageBox.Show("You have not figures in selected tab.");
+                return;
+            }
+            else
+                SaveDialog();
+        }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            LoadDialog();
+        }
+
+        public void SaveDialog()
+        {
+            SaveState();
+            saveFileDialog1.Filter = "XML files|*.xml|Binary|*.dat|JSON files|*.json|YAML files|*.yaml";
+
+            if (saveFileDialog1.ShowDialog() != DialogResult.OK) return;
+            string ext = saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.LastIndexOf('.') + 1);
+
+            Factory cr = new Factory();
+            cr.Format(ext.ToUpper());
+            cr.To(mem.GetState, saveFileDialog1.FileName);
+        }
+        public void LoadDialog()
+        {
+            try
+            {
+                openFileDialog1.Filter = "XML files|*.xml|Binary|*.dat|JSON files|*.json|YAML files |*.yaml";
+                if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
+                string ext = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf('.') + 1);
+
+                Factory cr = new Factory();
+                cr.Format(ext.ToUpper());
+
+                mem = new Memento(cr.From(openFileDialog1.FileName));
+                LoadState();
+            }
+            catch
+            {
+                MessageBox.Show("Load Error");
+                return;
+            }
+        }
+
+
+        public void SaveState()
+        {
+            var list = new List<XData>();
+            foreach (IShape item in CurrentTabControls)
+            {
+                list.Add(item.Data);
+            }
+
+            mem = new Memento(list);
+        }
+
+        public void LoadState()
+        {
+            List<XData> list = new List<XData>();
+            Tabs_tc.SelectedTab.Controls.Clear();
+            foreach (var item in mem.GetState)
+            {
+                CreateFigure(item);
+            }
+        }
+
+        private void tabsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem tabsItem = (sender as ToolStripMenuItem);
+            tabsItem.DropDownItems.Clear();
+            foreach (TabPage tab in Tabs_tc.TabPages)
+            {
+                ToolStripMenuItem tmi = new ToolStripMenuItem(tab.Text);
+                tmi.Click += tabChangerInToolstrip_Click;
+                if (tab == Tabs_tc.SelectedTab)
+                {
+                    tmi.BackColor = Color.IndianRed;
+                }
+                if (!tabsItem.DropDownItems.Contains(tmi))
+                {
+                    tabsItem.DropDownItems.Add(tmi);
+                }
+
+            }
+        }
+
+        private void tabChangerInToolstrip_Click(object sender,EventArgs e)
+        {
+            ToolStripMenuItem tab_tollstrip = (sender as ToolStripMenuItem);
+            MessageBox.Show("Sorry, feature does not implemented yet");
+           // Tabs_tc.SelectedIndex = Tabs_tc.TabPages //[(tab_tollstrip.OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf(tab_tollstrip)];
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void CreateFigure(XData Data)
+        {
+
+            string type = Data.Type;
+            switch (type)
+            {
+                case "rectangle":
+                    Tabs_tc.SelectedTab.Controls.Add(new CustomRect(Data, this));
+                    break;
+                case "ellipse":
+                    Tabs_tc.SelectedTab.Controls.Add(new CustomEllipse(Data, this));
+                    break;
+                case "line":
+                    Tabs_tc.SelectedTab.Controls.Add(new CustomLine(Data, this));
+                    break;
+                default:
+                    Tabs_tc.SelectedTab.Controls.Add(new CustomRect(Data, this));
+                    break;
+            }
         }
     }
 }

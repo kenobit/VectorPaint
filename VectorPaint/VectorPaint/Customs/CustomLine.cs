@@ -8,9 +8,10 @@ using System.Windows.Forms;
 
 namespace VectorPaint.Customs
 {
-    public class CustomRect : IShape
+    public class CustomLine : IShape
     {
-        public override string Type { get { return "rectangle"; } }
+
+        public override string Type { get { return "line"; } }
         public int Thick { get; set; }
         public override Form MainFormLink { get; set; }
         public override XData Data { get; set; }
@@ -22,7 +23,7 @@ namespace VectorPaint.Customs
         int mX = 0,
             mY = 0;
 
-        public CustomRect(int x, int y, Color color, int width, int height, int thick)
+        public CustomLine(int x, int y, Color color, int width, int height, int thick)
         {
             OpacityInit();
             Data = new XData();
@@ -34,7 +35,7 @@ namespace VectorPaint.Customs
             Data.SizeX = width;
             Data.SizeY = height;
             Data.Width = thick;
-            Data.Type = "rectangle";
+            Data.Type = "line";
 
             this.Location = new Point(this.Data.PointX, this.Data.PointY);
             this.BackColor = Color.White;
@@ -44,7 +45,7 @@ namespace VectorPaint.Customs
             this.Height = this.Data.SizeY;
         }
 
-        public CustomRect(XData Data)
+        public CustomLine(XData Data)
         {
             OpacityInit();
             this.Data = Data;
@@ -55,7 +56,7 @@ namespace VectorPaint.Customs
             this.Width = Data.SizeX;
             this.Height = Data.SizeY;
         }
-        public CustomRect(XData Data,Form form)
+        public CustomLine(XData Data, Form form)
         {
             OpacityInit();
             this.Data = Data;
@@ -71,7 +72,7 @@ namespace VectorPaint.Customs
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.DrawRectangle(new Pen(this.ForeColor, Thick), 1, 1, this.Width - 2 * 1, this.Height - 2 * 1);
+            g.DrawLine(new Pen(this.ForeColor, Thick), 1, 1, this.Width * 1, this.Height * 1);
             g.DrawRectangle(new Pen(this.resizeRectColor, 5), this.Width - 15 * 1, this.Height - 15 * 1, 10, 10);
 
             if (this.Focused)
@@ -125,6 +126,7 @@ namespace VectorPaint.Customs
         protected override void OnLostFocus(EventArgs e)
         {
             this.BackColor = Color.White;
+
         }
         protected override void OnMouseDown(MouseEventArgs e)
         {
@@ -141,7 +143,7 @@ namespace VectorPaint.Customs
                 else
                 {
                     isMoving = true;
-                    
+
                 }
                 mX = e.X;
                 mY = e.Y;
@@ -174,13 +176,14 @@ namespace VectorPaint.Customs
         }
         protected override void OnLeave(EventArgs e)
         {
-            this.resizeRectColor = Color.White;
+            this.resizeRectColor = Color.Transparent;
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
             this.isMoving = false;
             this.isResizing = false;
+            this.Parent.Refresh();
         }
     }
 }
