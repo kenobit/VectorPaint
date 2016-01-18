@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VectorPaint.Customs;
 using System.Reflection;
-
+using System.Threading;
+using System.Globalization;
 
 namespace VectorPaint
 {
@@ -28,7 +29,7 @@ namespace VectorPaint
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
 
         private void Color_pan_Click(object sender, EventArgs e)
@@ -111,7 +112,7 @@ namespace VectorPaint
             {
                 if (radio.Checked == true)
                 {
-                    sw = radio.Text;
+                    sw = radio.Tag.ToString();
                 }
             }
             Thick = Width_tb.Text == "" ? 1 : Convert.ToInt32(Width_tb.Text);
@@ -172,7 +173,7 @@ namespace VectorPaint
                     {
                         foreach (RadioButton item in FigureCheck_radioRegion.Controls)
                         {
-                            if (item.Text.ToLower() == figure.Type.ToLower())
+                            if (item.Tag.ToString().ToLower() == figure.Type.ToLower())
                             {
                                 item.Checked = true;
                             }
@@ -187,7 +188,7 @@ namespace VectorPaint
                     {
                         foreach (RadioButton item in FigureCheck_radioRegion.Controls)
                         {
-                            if (item.Text.ToLower() == figure.Type.ToLower())
+                            if (item.Tag.ToString().ToLower() == figure.Type.ToLower())
                             {
                                 item.Checked = true;
                             }
@@ -202,7 +203,7 @@ namespace VectorPaint
                     {
                         foreach (RadioButton item in FigureCheck_radioRegion.Controls)
                         {
-                            if (item.Text.ToLower() == figure.Type.ToLower())
+                            if (item.Tag.ToString().ToLower() == figure.Type.ToLower())
                             {
                                 item.Checked = true;
                             }
@@ -321,17 +322,17 @@ namespace VectorPaint
             }
         }
 
-        private void tabChangerInToolstrip_Click(object sender,EventArgs e)
+        private void tabChangerInToolstrip_Click(object sender, EventArgs e)
         {
-           // ToolStripMenuItem tab_tollstrip = (sender as ToolStripMenuItem);
+            // ToolStripMenuItem tab_tollstrip = (sender as ToolStripMenuItem);
             MessageBox.Show("Sorry, feature does not implemented yet");
-           // Tabs_tc.SelectedIndex = Tabs_tc.TabPages //[(tab_tollstrip.OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf(tab_tollstrip)];
+            // Tabs_tc.SelectedIndex = Tabs_tc.TabPages //[(tab_tollstrip.OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf(tab_tollstrip)];
 
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
+            Application.Exit();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -339,7 +340,30 @@ namespace VectorPaint
             Settings_form settings = new Settings_form();
             if (settings.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("form");
+                string lang = settings.Language;
+                switch (lang)
+                {
+                    case "English":
+                        {
+                            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+
+                        }
+                        break;
+                    case "Москальский":
+                        {
+                            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+                        }
+                        break;
+                    case "Українська":
+                        {
+                            Thread.CurrentThread.CurrentUICulture = new CultureInfo("uk-UA");
+                        }
+                        break;
+                    default:
+                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                        break;
+                }
+                ChangeLanguage();
             }
         }
 
@@ -363,5 +387,59 @@ namespace VectorPaint
                     break;
             }
         }
+
+        private static void ChangeLanguage()
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                LocalizeForm(frm);
+            }
+        }
+
+        private static void LocalizeForm(Form frm)
+        {
+            var manager = new ComponentResourceManager(frm.GetType());
+            manager.ApplyResources(frm, "$this");
+            ApplyResources(manager, frm.Controls);
+        }
+
+        private static void ApplyResources(ComponentResourceManager manager, Control.ControlCollection ctls)
+        {
+            foreach (Control ctl in ctls)
+            {
+                manager.ApplyResources(ctl, ctl.Name);
+
+                if (ctl is MenuStrip)
+                {
+                    ApplyResourcesMenuItems(manager, (ctl as MenuStrip).Items);
+
+                }
+                else if (ctl is ToolStrip)
+                {
+                    ApplyResourcesToolsItems(manager, (ctl as ToolStrip).Items);
+
+                }
+                else {
+                    ApplyResources(manager, ctl.Controls);
+                }
+            }
+        }
+
+        private static void ApplyResourcesMenuItems(ComponentResourceManager manager, ToolStripItemCollection items)
+        {
+            foreach (var item in items)
+            {
+                ApplyResourcesMenuItems(manager, (item as ToolStripMenuItem).DropDown.Items);
+                manager.ApplyResources(item, (item as ToolStripMenuItem).Name);
+            }
+        }
+        private static void ApplyResourcesToolsItems(ComponentResourceManager manager, ToolStripItemCollection items)
+        {
+            foreach (var item in items)
+            {
+                manager.ApplyResources(item, (item as ToolStripItem).Name);
+            }
+        }
+
     }
 }

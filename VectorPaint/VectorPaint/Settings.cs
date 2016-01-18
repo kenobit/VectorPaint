@@ -12,9 +12,17 @@ namespace VectorPaint
 {
     public partial class Settings_form : Form
     {
+        public string Language
+        {
+            get
+            {
+                return Lang_cb.SelectedItem.ToString();
+            }
+        }
         public Settings_form()
         {
             InitializeComponent();
+            Lang_cb.SelectedIndex = 0;
         }
 
         private void Cancel_btn_Click(object sender, EventArgs e)

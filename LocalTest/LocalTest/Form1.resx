@@ -117,181 +117,75 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Ok_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 111</value>
-  </data>
-  <data name="Ok_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Ok_btn.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Ok_btn.Text" xml:space="preserve">
-    <value>Ok</value>
-  </data>
-  <data name="&gt;&gt;Ok_btn.Name" xml:space="preserve">
-    <value>Ok_btn</value>
-  </data>
-  <data name="&gt;&gt;Ok_btn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Ok_btn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Ok_btn.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Cancel_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 111</value>
-  </data>
-  <data name="Cancel_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="Cancel_btn.TabIndex" type="System.Int32, mscorlib">
+  <data name="Lang_cb.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="Cancel_btn.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;Cancel_btn.Name" xml:space="preserve">
-    <value>Cancel_btn</value>
-  </data>
-  <data name="&gt;&gt;Cancel_btn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Cancel_btn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Cancel_btn.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Lang_cb.Items" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="Lang_cb.Items1" xml:space="preserve">
-    <value>Москальский</value>
-  </data>
-  <data name="Lang_cb.Items2" xml:space="preserve">
-    <value>Українська</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 171</value>
   </data>
   <data name="Lang_cb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 12</value>
+    <value>135, 40</value>
   </data>
-  <data name="Lang_cb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 21</value>
-  </data>
-  <data name="Lang_cb.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Lang_cb.Name" xml:space="preserve">
-    <value>Lang_cb</value>
-  </data>
-  <data name="&gt;&gt;Lang_cb.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lang_cb.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Lang_cb.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lang_lb.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lang_lb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 15</value>
-  </data>
-  <data name="lang_lb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 13</value>
-  </data>
-  <data name="lang_lb.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lang_lb.Text" xml:space="preserve">
-    <value>System language</value>
-  </data>
-  <data name="&gt;&gt;lang_lb.Name" xml:space="preserve">
-    <value>lang_lb</value>
-  </data>
-  <data name="&gt;&gt;lang_lb.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lang_lb.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lang_lb.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="theme_lb.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="theme_lb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 49</value>
-  </data>
-  <data name="theme_lb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="theme_lb.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="theme_lb.Text" xml:space="preserve">
-    <value>Theme</value>
-  </data>
-  <data name="&gt;&gt;theme_lb.Name" xml:space="preserve">
-    <value>theme_lb</value>
-  </data>
-  <data name="&gt;&gt;theme_lb.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;theme_lb.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;theme_lb.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Theme_cb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 46</value>
-  </data>
-  <data name="Theme_cb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 21</value>
-  </data>
-  <data name="Theme_cb.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;Theme_cb.Name" xml:space="preserve">
-    <value>Theme_cb</value>
-  </data>
-  <data name="&gt;&gt;Theme_cb.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Theme_cb.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Theme_cb.ZOrder" xml:space="preserve">
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 148</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Settings_form</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>678, 394</value>
+  </data>
+  <data name="Lang_cb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 21</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Lang_cb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Hello world</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 162</value>
+  </data>
+  <data name="&gt;&gt;Lang_cb.Name" xml:space="preserve">
+    <value>Lang_cb</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Lang_cb.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="Lang_cb.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;Lang_cb.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>de-DE</value>
+  </metadata>
 </root>
