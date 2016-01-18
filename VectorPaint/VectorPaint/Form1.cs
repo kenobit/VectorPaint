@@ -323,7 +323,7 @@ namespace VectorPaint
 
         private void tabChangerInToolstrip_Click(object sender,EventArgs e)
         {
-            ToolStripMenuItem tab_tollstrip = (sender as ToolStripMenuItem);
+           // ToolStripMenuItem tab_tollstrip = (sender as ToolStripMenuItem);
             MessageBox.Show("Sorry, feature does not implemented yet");
            // Tabs_tc.SelectedIndex = Tabs_tc.TabPages //[(tab_tollstrip.OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf(tab_tollstrip)];
 
@@ -331,7 +331,16 @@ namespace VectorPaint
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Application.Exit(); 
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings_form settings = new Settings_form();
+            if (settings.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("form");
+            }
         }
 
         public void CreateFigure(XData Data)

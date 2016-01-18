@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace VectorPaint
 {
-    public partial class Settings : Form
+    public partial class Settings_form : Form
     {
-        public Settings()
+        public Settings_form()
         {
             InitializeComponent();
+        }
+
+        private void Cancel_btn_Click(object sender, EventArgs e)
+        {
+            ((sender as Button).Parent as Form).Close();
         }
     }
 }

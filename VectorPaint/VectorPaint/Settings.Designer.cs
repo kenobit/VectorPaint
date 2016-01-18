@@ -1,6 +1,6 @@
 ﻿namespace VectorPaint
 {
-    partial class Settings
+    partial class Settings_form
     {
         /// <summary>
         /// Required designer variable.
@@ -54,6 +54,7 @@
             this.Cancel_btn.TabIndex = 1;
             this.Cancel_btn.Text = "Cancel";
             this.Cancel_btn.UseVisualStyleBackColor = true;
+            this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
             // 
             // Lang_cb
             // 
@@ -89,7 +90,7 @@
             this.Theme_cb.Size = new System.Drawing.Size(140, 21);
             this.Theme_cb.TabIndex = 5;
             // 
-            // Settings
+            // Settings_form
             // 
             this.AcceptButton = this.Ok_btn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,7 +102,8 @@
             this.Controls.Add(this.Lang_cb);
             this.Controls.Add(this.Cancel_btn);
             this.Controls.Add(this.Ok_btn);
-            this.Name = "Settings";
+            this.Name = "Settings_form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();
