@@ -55,6 +55,7 @@ namespace VectorPaint.Customs
             this.Width = Data.SizeX;
             this.Height = Data.SizeY;
         }
+
         public CustomRect(XData Data,Form form)
         {
             OpacityInit();
@@ -120,7 +121,7 @@ namespace VectorPaint.Customs
         {
             (this.MainFormLink as IDataTransfer).FromFigureToBars(this as object);
 
-            this.BackColor = Color.Red;
+            //this.BackColor = Color.Red;
         }
         protected override void OnLostFocus(EventArgs e)
         {

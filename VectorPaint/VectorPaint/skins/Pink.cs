@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VectorPaint.skins
 {
-    class Dark : ISkin
+    class Pink : ISkin
     {
         public Color BoxBGColor
         {
@@ -22,7 +22,7 @@ namespace VectorPaint.skins
         {
             get
             {
-                Color ButtonBGColor = Color.FromArgb(14, 14, 45);
+                Color ButtonBGColor = Color.FromArgb(120, 31, 81);
                 return ButtonBGColor;
             }
         }
@@ -31,8 +31,8 @@ namespace VectorPaint.skins
         {
             get
             {
-               Font font = new Font("Segoe Print", 7.0f);
-               return font;
+                Font font = new Font("Segoe Print", 7.0f);
+                return font;
             }
         }
 
@@ -40,7 +40,7 @@ namespace VectorPaint.skins
         {
             get
             {
-                Color color = Color.FromArgb(177, 166, 134);
+                Color color = Color.White;
                 return color;
             }
         }
@@ -49,8 +49,8 @@ namespace VectorPaint.skins
         {
             get
             {
-               float FontSize = 10.0f;
-               return FontSize;
+                float FontSize = 10.0f;
+                return FontSize;
             }
         }
 
@@ -58,7 +58,7 @@ namespace VectorPaint.skins
         {
             get
             {
-                Color TabBGColor = Color.FromArgb(37, 37, 52);
+                Color TabBGColor = Color.FromArgb(228, 153, 196);
                 return TabBGColor;
             }
         }
@@ -67,7 +67,7 @@ namespace VectorPaint.skins
         {
             get
             {
-                Color TabBGColor = Color.FromArgb(37, 37, 52);
+                Color TabBGColor = Color.FromArgb(228, 153, 196);
                 return TabBGColor;
             }
         }
@@ -76,7 +76,7 @@ namespace VectorPaint.skins
         {
             get
             {
-                Color TabBGColor = Color.FromArgb(99, 88, 55);
+                Color TabBGColor = Color.FromArgb(85, 105, 46);
                 return TabBGColor;
             }
         }
@@ -85,7 +85,7 @@ namespace VectorPaint.skins
         {
             get
             {
-                Color TabBGColor = Color.FromArgb(177, 162, 118);
+                Color TabBGColor = Color.FromArgb(156, 176, 118);
                 return TabBGColor;
             }
         }

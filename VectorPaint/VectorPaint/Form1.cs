@@ -418,7 +418,6 @@ namespace VectorPaint
                 else if (ctl is ToolStrip)
                 {
                     ApplyResourcesToolsItems(manager, (ctl as ToolStrip).Items);
-
                 }
                 else {
                     ApplyResources(manager, ctl.Controls);
@@ -452,6 +451,17 @@ namespace VectorPaint
                 {
                     ctrl.BackColor = theme.ButtonBGColor;
                 }
+            }
+        }
+
+        private void ChangeTheme(object sender, EventArgs e)
+        {
+            string theme = (sender as ToolStripMenuItem).Tag.ToString();
+
+            SkinnsFactory factory = new SkinnsFactory();
+            foreach (Form frm in Application.OpenForms)
+            {
+                factory.AcceptSkin(theme, frm);
             }
         }
 
