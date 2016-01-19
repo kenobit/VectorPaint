@@ -90,13 +90,13 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="skins\Blue.cs" />
     <Compile Include="skins\Dark.cs" />
     <Compile Include="skins\ISkin.cs" />
+    <Compile Include="skins\Pink.cs" />
+    <Compile Include="skins\SkinnsFactory.cs" />
     <Compile Include="XML.cs" />
     <Compile Include="YAML.cs" />
-    <EmbeddedResource Include="Form1.en-GB.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

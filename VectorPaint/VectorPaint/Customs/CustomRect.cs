@@ -55,7 +55,8 @@ namespace VectorPaint.Customs
             this.Width = Data.SizeX;
             this.Height = Data.SizeY;
         }
-        public CustomRect(XData Data, Form form)
+
+        public CustomRect(XData Data,Form form)
         {
             OpacityInit();
             this.Data = Data;

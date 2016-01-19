@@ -55,7 +55,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.Color_btn = new System.Windows.Forms.ToolStripButton();
             this.LeftPanel_pan = new System.Windows.Forms.Panel();
-            this.Type_pan = new System.Windows.Forms.Panel();
             this.Width_pan = new System.Windows.Forms.Panel();
             this.SizeY_tb = new System.Windows.Forms.TextBox();
             this.SizeY_lb = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@
             this.PointX_lb = new System.Windows.Forms.Label();
             this.Width_tb = new System.Windows.Forms.TextBox();
             this.Width_lb = new System.Windows.Forms.Label();
-            this.Figures_pan = new System.Windows.Forms.Panel();
             this.FigureCheck_radioRegion = new System.Windows.Forms.GroupBox();
             this.radioCurve = new System.Windows.Forms.RadioButton();
             this.radioLine = new System.Windows.Forms.RadioButton();
@@ -104,15 +102,19 @@
             this.buttonLoad = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blueToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Figures_pan = new System.Windows.Forms.Panel();
             this.MenuBar.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.LeftPanel_pan.SuspendLayout();
             this.Width_pan.SuspendLayout();
-            this.Figures_pan.SuspendLayout();
             this.FigureCheck_radioRegion.SuspendLayout();
             this.Tabs_tc.SuspendLayout();
             this.FigureContextMenu.SuspendLayout();
+            this.Figures_pan.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -123,7 +125,8 @@
             this.colorToolStripMenuItem,
             this.typeToolStripMenuItem,
             this.tabsToolStripMenuItem,
-            this.widthToolStripMenuItem});
+            this.widthToolStripMenuItem,
+            this.themeToolStripMenuItem});
             resources.ApplyResources(this.MenuBar, "MenuBar");
             this.MenuBar.Name = "MenuBar";
             // 
@@ -278,23 +281,16 @@
             // 
             // LeftPanel_pan
             // 
-            this.LeftPanel_pan.Controls.Add(this.Type_pan);
+            this.LeftPanel_pan.BackColor = System.Drawing.Color.Transparent;
             this.LeftPanel_pan.Controls.Add(this.Width_pan);
             this.LeftPanel_pan.Controls.Add(this.Figures_pan);
             this.LeftPanel_pan.Controls.Add(this.Color_pan);
             resources.ApplyResources(this.LeftPanel_pan, "LeftPanel_pan");
             this.LeftPanel_pan.Name = "LeftPanel_pan";
             // 
-            // Type_pan
-            // 
-            this.Type_pan.BackColor = System.Drawing.Color.White;
-            this.Type_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Type_pan, "Type_pan");
-            this.Type_pan.Name = "Type_pan";
-            // 
             // Width_pan
             // 
-            this.Width_pan.BackColor = System.Drawing.Color.White;
+            this.Width_pan.BackColor = System.Drawing.Color.Transparent;
             this.Width_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Width_pan.Controls.Add(this.SizeY_tb);
             this.Width_pan.Controls.Add(this.SizeY_lb);
@@ -358,14 +354,6 @@
             // 
             resources.ApplyResources(this.Width_lb, "Width_lb");
             this.Width_lb.Name = "Width_lb";
-            // 
-            // Figures_pan
-            // 
-            this.Figures_pan.BackColor = System.Drawing.Color.White;
-            this.Figures_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Figures_pan.Controls.Add(this.FigureCheck_radioRegion);
-            resources.ApplyResources(this.Figures_pan, "Figures_pan");
-            this.Figures_pan.Name = "Figures_pan";
             // 
             // FigureCheck_radioRegion
             // 
@@ -623,18 +611,49 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button1
+            // themeToolStripMenuItem
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darkToolStripMenuItem,
+            this.blueToolStripMenuItem1,
+            this.pinkToolStripMenuItem});
+            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            resources.ApplyResources(this.themeToolStripMenuItem, "themeToolStripMenuItem");
+            // 
+            // darkToolStripMenuItem
+            // 
+            this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
+            resources.ApplyResources(this.darkToolStripMenuItem, "darkToolStripMenuItem");
+            this.darkToolStripMenuItem.Tag = "Dark";
+            this.darkToolStripMenuItem.Click += new System.EventHandler(this.ChangeTheme);
+            // 
+            // blueToolStripMenuItem1
+            // 
+            this.blueToolStripMenuItem1.Name = "blueToolStripMenuItem1";
+            resources.ApplyResources(this.blueToolStripMenuItem1, "blueToolStripMenuItem1");
+            this.blueToolStripMenuItem1.Tag = "Blue";
+            this.blueToolStripMenuItem1.Click += new System.EventHandler(this.ChangeTheme);
+            // 
+            // pinkToolStripMenuItem
+            // 
+            this.pinkToolStripMenuItem.Name = "pinkToolStripMenuItem";
+            resources.ApplyResources(this.pinkToolStripMenuItem, "pinkToolStripMenuItem");
+            this.pinkToolStripMenuItem.Tag = "Pink";
+            this.pinkToolStripMenuItem.Click += new System.EventHandler(this.ChangeTheme);
+            // 
+            // Figures_pan
+            // 
+            this.Figures_pan.BackColor = System.Drawing.Color.Transparent;
+            this.Figures_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Figures_pan.Controls.Add(this.FigureCheck_radioRegion);
+            this.Figures_pan.ForeColor = System.Drawing.SystemColors.ControlText;
+            resources.ApplyResources(this.Figures_pan, "Figures_pan");
+            this.Figures_pan.Name = "Figures_pan";
             // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.AddTab);
@@ -655,11 +674,11 @@
             this.LeftPanel_pan.ResumeLayout(false);
             this.Width_pan.ResumeLayout(false);
             this.Width_pan.PerformLayout();
-            this.Figures_pan.ResumeLayout(false);
             this.FigureCheck_radioRegion.ResumeLayout(false);
             this.FigureCheck_radioRegion.PerformLayout();
             this.Tabs_tc.ResumeLayout(false);
             this.FigureContextMenu.ResumeLayout(false);
+            this.Figures_pan.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -671,7 +690,6 @@
         private System.Windows.Forms.ToolStrip ToolBar;
         private System.Windows.Forms.Panel LeftPanel_pan;
         private System.Windows.Forms.Panel Width_pan;
-        private System.Windows.Forms.Panel Figures_pan;
         private System.Windows.Forms.Panel Color_pan;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -680,7 +698,6 @@
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem typeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabsToolStripMenuItem;
-        private System.Windows.Forms.Panel Type_pan;
         private System.Windows.Forms.ToolStripMenuItem widthToolStripMenuItem;
         private System.Windows.Forms.GroupBox FigureCheck_radioRegion;
         private System.Windows.Forms.RadioButton radioCurve;
@@ -741,7 +758,11 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem themeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pinkToolStripMenuItem;
+        private System.Windows.Forms.Panel Figures_pan;
     }
 }
 

@@ -13,7 +13,10 @@ namespace VectorPaint.skins
         Color WindowBGColor { get; }
         Color TabBGColor { get; }
         Color BoxBGColor { get; }
-        string Font { get; }
-        int FontSize { get; }
+        Color MenuBGColor { get; }
+        Color ToolStripBGColor { get; }
+        Font Font { get; }
+        Color FontColor { get;  }
+        float FontSize { get; }
     }
 }
