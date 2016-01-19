@@ -55,7 +55,7 @@ namespace VectorPaint.Customs
             this.Width = Data.SizeX;
             this.Height = Data.SizeY;
         }
-        public CustomRect(XData Data,Form form)
+        public CustomRect(XData Data, Form form)
         {
             OpacityInit();
             this.Data = Data;
@@ -78,6 +78,9 @@ namespace VectorPaint.Customs
             {
                 this.BackColor = Color.Azure;
             }
+        }
+        protected override void OnDoubleClick(EventArgs e)
+        {
         }
 
         public override void DrowDrag(int mouseX, int mouseY, int tabX, int tabY)
@@ -114,13 +117,20 @@ namespace VectorPaint.Customs
 
         protected override void OnClick(EventArgs e)
         {
-            this.Focus();
+            if (!this.Focused)
+            {
+                this.Focus();
+            }
+            else
+            {
+                this.Data = (MainFormLink as IDataTransfer).FromBarsToFigure();
+            }
+
+
         }
         protected override void OnGotFocus(EventArgs e)
         {
             (this.MainFormLink as IDataTransfer).FromFigureToBars(this as object);
-
-            this.BackColor = Color.Red;
         }
         protected override void OnLostFocus(EventArgs e)
         {
@@ -141,7 +151,7 @@ namespace VectorPaint.Customs
                 else
                 {
                     isMoving = true;
-                    
+
                 }
                 mX = e.X;
                 mY = e.Y;
@@ -154,8 +164,7 @@ namespace VectorPaint.Customs
                 this.Location = new Point(Location.X + (e.X - mX), Location.Y + (e.Y - mY));
                 this.Data.PointX = this.Location.X;
                 this.Data.PointY = this.Location.Y;
-                (this.MainFormLink as IDataTransfer).FromFigureToBars(this as object);
-            this.Parent.Refresh();
+                this.Parent.Refresh();
             }
             if (isResizing)
             {
@@ -164,7 +173,6 @@ namespace VectorPaint.Customs
                 this.Refresh();
                 this.Data.SizeX = this.Width;
                 this.Data.SizeY = this.Height;
-                (this.MainFormLink as IDataTransfer).FromFigureToBars(this as object);
             }
         }
 
@@ -179,6 +187,8 @@ namespace VectorPaint.Customs
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
+            (this.MainFormLink as IDataTransfer).FromFigureToBars(this as object);
+
             this.isMoving = false;
             this.isResizing = false;
         }

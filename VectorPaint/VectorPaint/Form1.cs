@@ -18,14 +18,15 @@ namespace VectorPaint
     public partial class MainWindow : Form, IDataTransfer
     {
         public Color c = Color.Black;
-        public int Thick = 1;
-        IShape currentShape = null;
-        public IShape FocusedFigure { get; set; }
-        List<IShape> figures = new List<IShape>();
-        int tabX = 0,
-            tabY = 0;
+        private IShape currentShape = null;
+        private IShape FocusedFigure { get; set; }
+        private List<IShape> figures = new List<IShape>();
+        private int tabX = 0,
+                    tabY = 0, 
+                    Thick = 1;
+        private Memento mem;
         bool f = false;
-        TabPage.ControlCollection CurrentTabControls = null;
+        private TabPage.ControlCollection CurrentTabControls = null;
         private string currentTheme = "Dark";
 
         public MainWindow()
@@ -225,8 +226,11 @@ namespace VectorPaint
             PointY_tb.Text = figure.Data.PointY.ToString();
             Width_tb.Text = figure.Data.Width.ToString();
         }
+        public XData FromBarsToFigure()
+        {
+            return new XData(Convert.ToInt32(PointX_tb.Text), Convert.ToInt32(PointY_tb.Text), Convert.ToInt32(SizeX_tb.Text), Convert.ToInt32(SizeX_tb.Text), Convert.ToInt32(Width_tb.Text), Color_pan.BackColor);
+        }
 
-        Memento mem;
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -256,6 +260,7 @@ namespace VectorPaint
             cr.Format(ext.ToUpper());
             cr.To(mem.GetState, saveFileDialog1.FileName);
         }
+
         public void LoadDialog()
         {
             try
@@ -357,14 +362,15 @@ namespace VectorPaint
                 ChangeTheme(settings.Theme);
             }
         }
+
         private void ChangeTheme(string theme)
         {
             if (currentTheme == theme)
             {
-                MessageBox.Show(String.Format("Текущая тема совпадает с выбраной {0}",currentTheme));
+                MessageBox.Show(String.Format("Текущая тема совпадает с выбраной {0}", currentTheme));
                 return;
             }
-            MessageBox.Show(String.Format("Считай, что поменял тему на {0}",theme));
+            MessageBox.Show(String.Format("Считай, что поменял тему на {0}", theme));
             currentTheme = theme;
             //SkinnsFactory factory = new SkinnsFactory();
             //foreach (Form frm in Application.OpenForms)

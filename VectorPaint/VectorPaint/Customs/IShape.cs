@@ -23,6 +23,8 @@ namespace VectorPaint.Customs
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             SetStyle(ControlStyles.Opaque, true);
         }
+       
+
 
         protected override CreateParams CreateParams
         {

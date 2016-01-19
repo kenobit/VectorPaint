@@ -117,7 +117,6 @@
             // 
             // MenuBar
             // 
-            resources.ApplyResources(this.MenuBar, "MenuBar");
             this.MenuBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -125,51 +124,51 @@
             this.typeToolStripMenuItem,
             this.tabsToolStripMenuItem,
             this.widthToolStripMenuItem});
+            resources.ApplyResources(this.MenuBar, "MenuBar");
             this.MenuBar.Name = "MenuBar";
             // 
             // fileToolStripMenuItem
             // 
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
             this.loadToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // saveToolStripMenuItem
             // 
-            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // loadToolStripMenuItem
             // 
-            resources.ApplyResources(this.loadToolStripMenuItem, "loadToolStripMenuItem");
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            resources.ApplyResources(this.loadToolStripMenuItem, "loadToolStripMenuItem");
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // settingsToolStripMenuItem
             // 
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // colorToolStripMenuItem
             // 
-            resources.ApplyResources(this.colorToolStripMenuItem, "colorToolStripMenuItem");
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            resources.ApplyResources(this.colorToolStripMenuItem, "colorToolStripMenuItem");
             this.colorToolStripMenuItem.Click += new System.EventHandler(this.Color_pan_Click);
             // 
             // typeToolStripMenuItem
             // 
-            resources.ApplyResources(this.typeToolStripMenuItem, "typeToolStripMenuItem");
             this.typeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rectangleToolStripMenuItem1,
             this.ellipseToolStripMenuItem1,
@@ -177,16 +176,17 @@
             this.lineToolStripMenuItem1,
             this.curveToolStripMenuItem1});
             this.typeToolStripMenuItem.Name = "typeToolStripMenuItem";
+            resources.ApplyResources(this.typeToolStripMenuItem, "typeToolStripMenuItem");
             // 
             // rectangleToolStripMenuItem1
             // 
-            resources.ApplyResources(this.rectangleToolStripMenuItem1, "rectangleToolStripMenuItem1");
             this.rectangleToolStripMenuItem1.Name = "rectangleToolStripMenuItem1";
+            resources.ApplyResources(this.rectangleToolStripMenuItem1, "rectangleToolStripMenuItem1");
             // 
             // ellipseToolStripMenuItem1
             // 
-            resources.ApplyResources(this.ellipseToolStripMenuItem1, "ellipseToolStripMenuItem1");
             this.ellipseToolStripMenuItem1.Name = "ellipseToolStripMenuItem1";
+            resources.ApplyResources(this.ellipseToolStripMenuItem1, "ellipseToolStripMenuItem1");
             // 
             // roundRectToolStripMenuItem1
             // 
@@ -195,8 +195,8 @@
             // 
             // lineToolStripMenuItem1
             // 
-            resources.ApplyResources(this.lineToolStripMenuItem1, "lineToolStripMenuItem1");
             this.lineToolStripMenuItem1.Name = "lineToolStripMenuItem1";
+            resources.ApplyResources(this.lineToolStripMenuItem1, "lineToolStripMenuItem1");
             // 
             // curveToolStripMenuItem1
             // 
@@ -205,13 +205,12 @@
             // 
             // tabsToolStripMenuItem
             // 
-            resources.ApplyResources(this.tabsToolStripMenuItem, "tabsToolStripMenuItem");
             this.tabsToolStripMenuItem.Name = "tabsToolStripMenuItem";
+            resources.ApplyResources(this.tabsToolStripMenuItem, "tabsToolStripMenuItem");
             this.tabsToolStripMenuItem.Click += new System.EventHandler(this.tabsToolStripMenuItem_Click);
             // 
             // widthToolStripMenuItem
             // 
-            resources.ApplyResources(this.widthToolStripMenuItem, "widthToolStripMenuItem");
             this.widthToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
@@ -219,82 +218,82 @@
             this.toolStripMenuItem5,
             this.toolStripMenuItem6});
             this.widthToolStripMenuItem.Name = "widthToolStripMenuItem";
+            resources.ApplyResources(this.widthToolStripMenuItem, "widthToolStripMenuItem");
             // 
             // toolStripMenuItem2
             // 
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             // 
             // toolStripMenuItem3
             // 
-            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             // 
             // toolStripMenuItem4
             // 
-            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
             // 
             // toolStripMenuItem5
             // 
-            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
             // 
             // toolStripMenuItem6
             // 
-            resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
             // 
             // ToolBar
             // 
-            resources.ApplyResources(this.ToolBar, "ToolBar");
             this.ToolBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Save_,
             this.toolStripButton1,
             this.Color_btn});
+            resources.ApplyResources(this.ToolBar, "ToolBar");
             this.ToolBar.Name = "ToolBar";
             // 
             // Save_
             // 
-            resources.ApplyResources(this.Save_, "Save_");
             this.Save_.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.Save_, "Save_");
             this.Save_.Name = "Save_";
             this.Save_.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // toolStripButton1
             // 
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // Color_btn
             // 
-            resources.ApplyResources(this.Color_btn, "Color_btn");
             this.Color_btn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.Color_btn, "Color_btn");
             this.Color_btn.Name = "Color_btn";
             this.Color_btn.Click += new System.EventHandler(this.Color_pan_Click);
             // 
             // LeftPanel_pan
             // 
-            resources.ApplyResources(this.LeftPanel_pan, "LeftPanel_pan");
             this.LeftPanel_pan.Controls.Add(this.Type_pan);
             this.LeftPanel_pan.Controls.Add(this.Width_pan);
             this.LeftPanel_pan.Controls.Add(this.Figures_pan);
             this.LeftPanel_pan.Controls.Add(this.Color_pan);
+            resources.ApplyResources(this.LeftPanel_pan, "LeftPanel_pan");
             this.LeftPanel_pan.Name = "LeftPanel_pan";
             // 
             // Type_pan
             // 
-            resources.ApplyResources(this.Type_pan, "Type_pan");
             this.Type_pan.BackColor = System.Drawing.Color.White;
             this.Type_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.Type_pan, "Type_pan");
             this.Type_pan.Name = "Type_pan";
             // 
             // Width_pan
             // 
-            resources.ApplyResources(this.Width_pan, "Width_pan");
             this.Width_pan.BackColor = System.Drawing.Color.White;
             this.Width_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Width_pan.Controls.Add(this.SizeY_tb);
@@ -307,6 +306,7 @@
             this.Width_pan.Controls.Add(this.PointX_lb);
             this.Width_pan.Controls.Add(this.Width_tb);
             this.Width_pan.Controls.Add(this.Width_lb);
+            resources.ApplyResources(this.Width_pan, "Width_pan");
             this.Width_pan.Name = "Width_pan";
             // 
             // SizeY_tb
@@ -361,20 +361,20 @@
             // 
             // Figures_pan
             // 
-            resources.ApplyResources(this.Figures_pan, "Figures_pan");
             this.Figures_pan.BackColor = System.Drawing.Color.White;
             this.Figures_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Figures_pan.Controls.Add(this.FigureCheck_radioRegion);
+            resources.ApplyResources(this.Figures_pan, "Figures_pan");
             this.Figures_pan.Name = "Figures_pan";
             // 
             // FigureCheck_radioRegion
             // 
-            resources.ApplyResources(this.FigureCheck_radioRegion, "FigureCheck_radioRegion");
             this.FigureCheck_radioRegion.Controls.Add(this.radioCurve);
             this.FigureCheck_radioRegion.Controls.Add(this.radioLine);
             this.FigureCheck_radioRegion.Controls.Add(this.radioRoundRect);
             this.FigureCheck_radioRegion.Controls.Add(this.radioEllipse);
             this.FigureCheck_radioRegion.Controls.Add(this.radioRectangle);
+            resources.ApplyResources(this.FigureCheck_radioRegion, "FigureCheck_radioRegion");
             this.FigureCheck_radioRegion.Name = "FigureCheck_radioRegion";
             this.FigureCheck_radioRegion.TabStop = false;
             // 
@@ -417,9 +417,9 @@
             // 
             // Color_pan
             // 
-            resources.ApplyResources(this.Color_pan, "Color_pan");
             this.Color_pan.BackColor = System.Drawing.Color.Black;
             this.Color_pan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.Color_pan, "Color_pan");
             this.Color_pan.Name = "Color_pan";
             this.Color_pan.Click += new System.EventHandler(this.Color_pan_Click);
             // 
@@ -441,8 +441,8 @@
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Cursor = System.Windows.Forms.Cursors.Cross;
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabPage_MouseDown);
@@ -451,8 +451,8 @@
             // 
             // Tabs_tc
             // 
-            resources.ApplyResources(this.Tabs_tc, "Tabs_tc");
             this.Tabs_tc.Controls.Add(this.tabPage1);
+            resources.ApplyResources(this.Tabs_tc, "Tabs_tc");
             this.Tabs_tc.Multiline = true;
             this.Tabs_tc.Name = "Tabs_tc";
             this.Tabs_tc.SelectedIndex = 0;
@@ -467,18 +467,17 @@
             // 
             // FigureContextMenu
             // 
-            resources.ApplyResources(this.FigureContextMenu, "FigureContextMenu");
             this.FigureContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.FigureContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.figureToolStripMenuItem,
             this.widthToolStripMenuItem1,
             this.colorToolStripMenuItem1});
             this.FigureContextMenu.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.FigureContextMenu, "FigureContextMenu");
             this.FigureContextMenu.UseWaitCursor = true;
             // 
             // figureToolStripMenuItem
             // 
-            resources.ApplyResources(this.figureToolStripMenuItem, "figureToolStripMenuItem");
             this.figureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rectangleToolStripMenuItem,
             this.ellipseToolStripMenuItem,
@@ -486,18 +485,19 @@
             this.lineToolStripMenuItem,
             this.curveToolStripMenuItem});
             this.figureToolStripMenuItem.Name = "figureToolStripMenuItem";
+            resources.ApplyResources(this.figureToolStripMenuItem, "figureToolStripMenuItem");
             this.figureToolStripMenuItem.Click += new System.EventHandler(this.figureToolStripMenuItem_Click);
             // 
             // rectangleToolStripMenuItem
             // 
-            resources.ApplyResources(this.rectangleToolStripMenuItem, "rectangleToolStripMenuItem");
             this.rectangleToolStripMenuItem.Name = "rectangleToolStripMenuItem";
+            resources.ApplyResources(this.rectangleToolStripMenuItem, "rectangleToolStripMenuItem");
             this.rectangleToolStripMenuItem.Tag = "Rectangle";
             // 
             // ellipseToolStripMenuItem
             // 
-            resources.ApplyResources(this.ellipseToolStripMenuItem, "ellipseToolStripMenuItem");
             this.ellipseToolStripMenuItem.Name = "ellipseToolStripMenuItem";
+            resources.ApplyResources(this.ellipseToolStripMenuItem, "ellipseToolStripMenuItem");
             this.ellipseToolStripMenuItem.Tag = "Ellipse";
             // 
             // roundRectToolStripMenuItem
@@ -520,7 +520,6 @@
             // 
             // widthToolStripMenuItem1
             // 
-            resources.ApplyResources(this.widthToolStripMenuItem1, "widthToolStripMenuItem1");
             this.widthToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pxToolStripMenuItem,
             this.pxToolStripMenuItem1,
@@ -528,40 +527,40 @@
             this.pxToolStripMenuItem3,
             this.pxToolStripMenuItem4});
             this.widthToolStripMenuItem1.Name = "widthToolStripMenuItem1";
+            resources.ApplyResources(this.widthToolStripMenuItem1, "widthToolStripMenuItem1");
             // 
             // pxToolStripMenuItem
             // 
-            resources.ApplyResources(this.pxToolStripMenuItem, "pxToolStripMenuItem");
             this.pxToolStripMenuItem.Name = "pxToolStripMenuItem";
+            resources.ApplyResources(this.pxToolStripMenuItem, "pxToolStripMenuItem");
             this.pxToolStripMenuItem.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // pxToolStripMenuItem1
             // 
-            resources.ApplyResources(this.pxToolStripMenuItem1, "pxToolStripMenuItem1");
             this.pxToolStripMenuItem1.Name = "pxToolStripMenuItem1";
+            resources.ApplyResources(this.pxToolStripMenuItem1, "pxToolStripMenuItem1");
             this.pxToolStripMenuItem1.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // pxToolStripMenuItem2
             // 
-            resources.ApplyResources(this.pxToolStripMenuItem2, "pxToolStripMenuItem2");
             this.pxToolStripMenuItem2.Name = "pxToolStripMenuItem2";
+            resources.ApplyResources(this.pxToolStripMenuItem2, "pxToolStripMenuItem2");
             this.pxToolStripMenuItem2.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // pxToolStripMenuItem3
             // 
-            resources.ApplyResources(this.pxToolStripMenuItem3, "pxToolStripMenuItem3");
             this.pxToolStripMenuItem3.Name = "pxToolStripMenuItem3";
+            resources.ApplyResources(this.pxToolStripMenuItem3, "pxToolStripMenuItem3");
             this.pxToolStripMenuItem3.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // pxToolStripMenuItem4
             // 
-            resources.ApplyResources(this.pxToolStripMenuItem4, "pxToolStripMenuItem4");
             this.pxToolStripMenuItem4.Name = "pxToolStripMenuItem4";
+            resources.ApplyResources(this.pxToolStripMenuItem4, "pxToolStripMenuItem4");
             this.pxToolStripMenuItem4.Click += new System.EventHandler(this.ContextMenuWidthClickEvent);
             // 
             // colorToolStripMenuItem1
             // 
-            resources.ApplyResources(this.colorToolStripMenuItem1, "colorToolStripMenuItem1");
             this.colorToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.redToolStripMenuItem,
             this.blueToolStripMenuItem,
@@ -569,39 +568,40 @@
             this.blackToolStripMenuItem,
             this.yellowToolStripMenuItem});
             this.colorToolStripMenuItem1.Name = "colorToolStripMenuItem1";
+            resources.ApplyResources(this.colorToolStripMenuItem1, "colorToolStripMenuItem1");
             // 
             // redToolStripMenuItem
             // 
-            resources.ApplyResources(this.redToolStripMenuItem, "redToolStripMenuItem");
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            resources.ApplyResources(this.redToolStripMenuItem, "redToolStripMenuItem");
             this.redToolStripMenuItem.Tag = "Red";
             this.redToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // blueToolStripMenuItem
             // 
-            resources.ApplyResources(this.blueToolStripMenuItem, "blueToolStripMenuItem");
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
+            resources.ApplyResources(this.blueToolStripMenuItem, "blueToolStripMenuItem");
             this.blueToolStripMenuItem.Tag = "Blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // greenToolStripMenuItem
             // 
-            resources.ApplyResources(this.greenToolStripMenuItem, "greenToolStripMenuItem");
             this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
+            resources.ApplyResources(this.greenToolStripMenuItem, "greenToolStripMenuItem");
             this.greenToolStripMenuItem.Tag = "Green";
             this.greenToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // blackToolStripMenuItem
             // 
-            resources.ApplyResources(this.blackToolStripMenuItem, "blackToolStripMenuItem");
             this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            resources.ApplyResources(this.blackToolStripMenuItem, "blackToolStripMenuItem");
             this.blackToolStripMenuItem.Tag = "Black";
             this.blackToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // yellowToolStripMenuItem
             // 
-            resources.ApplyResources(this.yellowToolStripMenuItem, "yellowToolStripMenuItem");
             this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
+            resources.ApplyResources(this.yellowToolStripMenuItem, "yellowToolStripMenuItem");
             this.yellowToolStripMenuItem.Tag = "Yellow";
             this.yellowToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
@@ -619,14 +619,9 @@
             this.buttonLoad.UseVisualStyleBackColor = true;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
-            // saveFileDialog1
-            // 
-            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // button1
             // 
