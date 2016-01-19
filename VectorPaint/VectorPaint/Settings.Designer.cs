@@ -74,6 +74,10 @@
             // Theme_cb
             // 
             this.Theme_cb.FormattingEnabled = true;
+            this.Theme_cb.Items.AddRange(new object[] {
+            resources.GetString("Theme_cb.Items"),
+            resources.GetString("Theme_cb.Items1"),
+            resources.GetString("Theme_cb.Items2")});
             resources.ApplyResources(this.Theme_cb, "Theme_cb");
             this.Theme_cb.Name = "Theme_cb";
             // 

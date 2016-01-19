@@ -26,11 +26,11 @@ namespace VectorPaint
             tabY = 0;
         bool f = false;
         TabPage.ControlCollection CurrentTabControls = null;
+        private string currentTheme = "Dark";
 
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         private void Color_pan_Click(object sender, EventArgs e)
@@ -148,7 +148,6 @@ namespace VectorPaint
         private void figureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Sorry, feature does not implemented yet");
-
         }
 
         private void ColorClickContextMenuEvent(object sender, EventArgs e)
@@ -159,7 +158,6 @@ namespace VectorPaint
         private void ContextMenuWidthClickEvent(object sender, EventArgs e)
         {
             MessageBox.Show("Sorry, feature does not implemented yet");
-
         }
 
         public void FromFigureToBars(object obj)
@@ -228,8 +226,6 @@ namespace VectorPaint
             Width_tb.Text = figure.Data.Width.ToString();
         }
 
-
-
         Memento mem;
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -281,7 +277,6 @@ namespace VectorPaint
             }
         }
 
-
         public void SaveState()
         {
             var list = new List<XData>();
@@ -289,7 +284,6 @@ namespace VectorPaint
             {
                 list.Add(item.Data);
             }
-
             mem = new Memento(list);
         }
 
@@ -319,16 +313,12 @@ namespace VectorPaint
                 {
                     tabsItem.DropDownItems.Add(tmi);
                 }
-
             }
         }
 
         private void tabChangerInToolstrip_Click(object sender, EventArgs e)
         {
-            // ToolStripMenuItem tab_tollstrip = (sender as ToolStripMenuItem);
             MessageBox.Show("Sorry, feature does not implemented yet");
-            // Tabs_tc.SelectedIndex = Tabs_tc.TabPages //[(tab_tollstrip.OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf(tab_tollstrip)];
-
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -347,7 +337,6 @@ namespace VectorPaint
                     case "English":
                         {
                             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-
                         }
                         break;
                     case "Москальский":
@@ -365,13 +354,29 @@ namespace VectorPaint
                         break;
                 }
                 ChangeLanguage();
+                ChangeTheme(settings.Theme);
             }
+        }
+        private void ChangeTheme(string theme)
+        {
+            if (currentTheme == theme)
+            {
+                MessageBox.Show(String.Format("Текущая тема совпадает с выбраной {0}",currentTheme));
+                return;
+            }
+            MessageBox.Show(String.Format("Считай, что поменял тему на {0}",theme));
+            currentTheme = theme;
+            //SkinnsFactory factory = new SkinnsFactory();
+            //foreach (Form frm in Application.OpenForms)
+            //{
+            //factory.AcceptSkin(theme, frm);
+            //}
         }
 
         public void CreateFigure(XData Data)
         {
-
             string type = Data.Type;
+
             switch (type)
             {
                 case "rectangle":
@@ -409,19 +414,27 @@ namespace VectorPaint
             foreach (Control ctl in ctls)
             {
                 manager.ApplyResources(ctl, ctl.Name);
-
-                if (ctl is MenuStrip)
+                if (ctl is ContextMenuStrip)
                 {
-                    ApplyResourcesMenuItems(manager, (ctl as MenuStrip).Items);
-
+                    ApplyResourcesContextMenuItems(manager, (ctl as ToolStrip).Items);
                 }
-                else if (ctl is ToolStrip)
+                else
                 {
-                    ApplyResourcesToolsItems(manager, (ctl as ToolStrip).Items);
-
-                }
-                else {
-                    ApplyResources(manager, ctl.Controls);
+                    if (ctl is MenuStrip)
+                    {
+                        ApplyResourcesMenuItems(manager, (ctl as MenuStrip).Items);
+                    }
+                    else
+                    {
+                        if (ctl is ToolStrip)
+                        {
+                            ApplyResourcesToolsItems(manager, (ctl as ToolStrip).Items);
+                        }
+                        else
+                        {
+                            ApplyResources(manager, ctl.Controls);
+                        }
+                    }
                 }
             }
         }
@@ -443,17 +456,25 @@ namespace VectorPaint
             }
         }
 
+        private static void ApplyResourcesContextMenuItems(ComponentResourceManager manager, ToolStripItemCollection items)
+        {
+            foreach (var item in items)
+            {
+                ApplyResourcesToolsItems(manager, (item as ToolStripMenuItem).DropDown.Items);
+                manager.ApplyResources(item, (item as ToolStripItem).Name);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             ISkin theme = new Dark();
             foreach (Form frm in Application.OpenForms)
             {
-                foreach(Control ctrl in frm.Controls)
+                foreach (Control ctrl in frm.Controls)
                 {
                     ctrl.BackColor = theme.ButtonBGColor;
                 }
             }
         }
-
     }
 }

@@ -19,10 +19,19 @@ namespace VectorPaint
                 return Lang_cb.SelectedItem.ToString();
             }
         }
+        public string Theme
+        {
+            get
+            {
+                return Theme_cb.SelectedItem.ToString();
+            }
+        }
+
         public Settings_form()
         {
             InitializeComponent();
             Lang_cb.SelectedIndex = 0;
+            Theme_cb.SelectedIndex = 0;
         }
 
         private void Cancel_btn_Click(object sender, EventArgs e)

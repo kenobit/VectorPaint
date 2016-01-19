@@ -492,26 +492,31 @@
             // 
             resources.ApplyResources(this.rectangleToolStripMenuItem, "rectangleToolStripMenuItem");
             this.rectangleToolStripMenuItem.Name = "rectangleToolStripMenuItem";
+            this.rectangleToolStripMenuItem.Tag = "Rectangle";
             // 
             // ellipseToolStripMenuItem
             // 
             resources.ApplyResources(this.ellipseToolStripMenuItem, "ellipseToolStripMenuItem");
             this.ellipseToolStripMenuItem.Name = "ellipseToolStripMenuItem";
+            this.ellipseToolStripMenuItem.Tag = "Ellipse";
             // 
             // roundRectToolStripMenuItem
             // 
             resources.ApplyResources(this.roundRectToolStripMenuItem, "roundRectToolStripMenuItem");
             this.roundRectToolStripMenuItem.Name = "roundRectToolStripMenuItem";
+            this.roundRectToolStripMenuItem.Tag = "RoundRect";
             // 
             // lineToolStripMenuItem
             // 
             resources.ApplyResources(this.lineToolStripMenuItem, "lineToolStripMenuItem");
             this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
+            this.lineToolStripMenuItem.Tag = "Line";
             // 
             // curveToolStripMenuItem
             // 
             resources.ApplyResources(this.curveToolStripMenuItem, "curveToolStripMenuItem");
             this.curveToolStripMenuItem.Name = "curveToolStripMenuItem";
+            this.curveToolStripMenuItem.Tag = "Curve";
             // 
             // widthToolStripMenuItem1
             // 
@@ -569,30 +574,35 @@
             // 
             resources.ApplyResources(this.redToolStripMenuItem, "redToolStripMenuItem");
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Tag = "Red";
             this.redToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // blueToolStripMenuItem
             // 
             resources.ApplyResources(this.blueToolStripMenuItem, "blueToolStripMenuItem");
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
+            this.blueToolStripMenuItem.Tag = "Blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // greenToolStripMenuItem
             // 
             resources.ApplyResources(this.greenToolStripMenuItem, "greenToolStripMenuItem");
             this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
+            this.greenToolStripMenuItem.Tag = "Green";
             this.greenToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // blackToolStripMenuItem
             // 
             resources.ApplyResources(this.blackToolStripMenuItem, "blackToolStripMenuItem");
             this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            this.blackToolStripMenuItem.Tag = "Black";
             this.blackToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // yellowToolStripMenuItem
             // 
             resources.ApplyResources(this.yellowToolStripMenuItem, "yellowToolStripMenuItem");
             this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
+            this.yellowToolStripMenuItem.Tag = "Yellow";
             this.yellowToolStripMenuItem.Click += new System.EventHandler(this.ColorClickContextMenuEvent);
             // 
             // buttonSave

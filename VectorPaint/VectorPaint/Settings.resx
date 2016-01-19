@@ -251,6 +251,15 @@
   <data name="&gt;&gt;theme_lb.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Theme_cb.Items" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Theme_cb.Items1" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="Theme_cb.Items2" xml:space="preserve">
+    <value>Pink</value>
+  </data>
   <data name="Theme_cb.Location" type="System.Drawing.Point, System.Drawing">
     <value>132, 46</value>
   </data>

@@ -343,6 +343,102 @@
   <data name="Clear_btn.Text" xml:space="preserve">
     <value>Люструвати</value>
   </data>
+  <data name="rectangleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Прямокутник</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Еліпс</value>
+  </data>
+  <data name="roundRectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="roundRectToolStripMenuItem.Text" xml:space="preserve">
+    <value>Округлий прямокутник</value>
+  </data>
+  <data name="lineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Лінія</value>
+  </data>
+  <data name="curveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="curveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Крива</value>
+  </data>
+  <data name="figureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="figureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Фігура</value>
+  </data>
+  <data name="pxToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="pxToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="pxToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="pxToolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="pxToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="widthToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="widthToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Товщіна</value>
+  </data>
+  <data name="redToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="redToolStripMenuItem.Text" xml:space="preserve">
+    <value>Червоний</value>
+  </data>
+  <data name="blueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="blueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Блакитний</value>
+  </data>
+  <data name="greenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="greenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Зелений</value>
+  </data>
+  <data name="blackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="blackToolStripMenuItem.Text" xml:space="preserve">
+    <value>Чорний</value>
+  </data>
+  <data name="yellowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="yellowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Жовтий</value>
+  </data>
+  <data name="colorToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="colorToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Колір</value>
+  </data>
+  <data name="FigureContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 70</value>
+  </data>
   <data name="buttonSave.Location" type="System.Drawing.Point, System.Drawing">
     <value>828, 10</value>
   </data>
@@ -357,6 +453,9 @@
   </data>
   <data name="buttonLoad.Text" xml:space="preserve">
     <value>Завантажити</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Темна</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Векторна малювалка</value>

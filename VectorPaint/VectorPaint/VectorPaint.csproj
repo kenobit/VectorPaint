@@ -94,7 +94,7 @@
     <Compile Include="skins\ISkin.cs" />
     <Compile Include="XML.cs" />
     <Compile Include="YAML.cs" />
-    <EmbeddedResource Include="Form1.hsb.resx">
+    <EmbeddedResource Include="Form1.en-GB.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
