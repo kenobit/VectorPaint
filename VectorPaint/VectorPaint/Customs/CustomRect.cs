@@ -80,9 +80,6 @@ namespace VectorPaint.Customs
                 this.BackColor = Color.Azure;
             }
         }
-        protected override void OnDoubleClick(EventArgs e)
-        {
-        }
 
         public override void DrowDrag(int mouseX, int mouseY, int tabX, int tabY)
         {
@@ -188,7 +185,6 @@ namespace VectorPaint.Customs
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            (this.MainFormLink as IDataTransfer).FromFigureToBars(this as object);
 
             this.isMoving = false;
             this.isResizing = false;

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace VectorPaint.skins
 {
-    class SkinnsFactory
+    class SkinsFactory
     {
         public void AcceptSkin(string skinName, Form form)
         {
@@ -89,7 +89,6 @@ namespace VectorPaint.skins
 
         private void ButtonsBeautiful(ISkin skin, Button button)
         {
-           
             button.BackColor = skin.ButtonBGColor;
             button.FlatStyle = FlatStyle.Flat;
             button.ForeColor = skin.FontColor;

@@ -118,6 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="colorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="colorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Колір</value>
+  </data>
+  <data name="typeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="typeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="tabsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 20</value>
+  </data>
+  <data name="tabsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вкладинки</value>
+  </data>
+  <data name="widthToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="widthToolStripMenuItem.Text" xml:space="preserve">
+    <value>Товщіна</value>
+  </data>
   <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 22</value>
   </data>
@@ -141,18 +171,6 @@
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Вихід</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="colorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="colorToolStripMenuItem.Text" xml:space="preserve">
-    <value>Колір</value>
   </data>
   <data name="rectangleToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
@@ -183,24 +201,6 @@
   </data>
   <data name="curveToolStripMenuItem1.Text" xml:space="preserve">
     <value>Крива</value>
-  </data>
-  <data name="typeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="typeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Тип</value>
-  </data>
-  <data name="tabsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 20</value>
-  </data>
-  <data name="tabsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вкладинки</value>
-  </data>
-  <data name="widthToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
-  </data>
-  <data name="widthToolStripMenuItem.Text" xml:space="preserve">
-    <value>Товщіна</value>
   </data>
   <data name="Save_.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -265,11 +265,17 @@
   <data name="Color_btn.Text" xml:space="preserve">
     <value>Колір</value>
   </data>
+  <data name="SizeY_tb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 113</value>
+  </data>
   <data name="SizeY_lb.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
   </data>
   <data name="SizeY_lb.Text" xml:space="preserve">
     <value>Висота</value>
+  </data>
+  <data name="SizeX_tb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 87</value>
   </data>
   <data name="SizeX_lb.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -277,11 +283,17 @@
   <data name="SizeX_lb.Text" xml:space="preserve">
     <value>Ширина</value>
   </data>
+  <data name="PointY_tb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 61</value>
+  </data>
   <data name="PointY_lb.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
   </data>
   <data name="PointY_lb.Text" xml:space="preserve">
     <value>Крапка У</value>
+  </data>
+  <data name="PointX_tb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 35</value>
   </data>
   <data name="PointX_lb.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -289,11 +301,20 @@
   <data name="PointX_lb.Text" xml:space="preserve">
     <value>Крапка Х</value>
   </data>
+  <data name="Width_tb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 9</value>
+  </data>
   <data name="Width_lb.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
   </data>
   <data name="Width_lb.Text" xml:space="preserve">
     <value>Товщіна</value>
+  </data>
+  <data name="LeftPanel_pan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 75</value>
+  </data>
+  <data name="FigureCheck_radioRegion.Text" xml:space="preserve">
+    <value>Фігури</value>
   </data>
   <data name="radioCurve.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 17</value>
@@ -325,9 +346,6 @@
   <data name="radioRectangle.Text" xml:space="preserve">
     <value>Прямокутник</value>
   </data>
-  <data name="FigureCheck_radioRegion.Text" xml:space="preserve">
-    <value>Фігури</value>
-  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
   </data>
@@ -335,13 +353,25 @@
     <value>КОЛІР</value>
   </data>
   <data name="Clear_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>905, 50</value>
+    <value>830, 45</value>
   </data>
   <data name="Clear_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 20</value>
+    <value>95, 25</value>
   </data>
   <data name="Clear_btn.Text" xml:space="preserve">
     <value>Люструвати</value>
+  </data>
+  <data name="AddTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>800, 45</value>
+  </data>
+  <data name="FigureContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 70</value>
+  </data>
+  <data name="figureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="figureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Фігура</value>
   </data>
   <data name="rectangleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
@@ -373,62 +403,11 @@
   <data name="curveToolStripMenuItem.Text" xml:space="preserve">
     <value>Крива</value>
   </data>
-  <data name="figureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
-  </data>
-  <data name="figureToolStripMenuItem.Text" xml:space="preserve">
-    <value>Фігура</value>
-  </data>
-  <data name="pxToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="pxToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="pxToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="pxToolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="pxToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
   <data name="widthToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="widthToolStripMenuItem1.Text" xml:space="preserve">
     <value>Товщіна</value>
-  </data>
-  <data name="redToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="redToolStripMenuItem.Text" xml:space="preserve">
-    <value>Червоний</value>
-  </data>
-  <data name="blueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="blueToolStripMenuItem.Text" xml:space="preserve">
-    <value>Блакитний</value>
-  </data>
-  <data name="greenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="greenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Зелений</value>
-  </data>
-  <data name="blackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="blackToolStripMenuItem.Text" xml:space="preserve">
-    <value>Чорний</value>
-  </data>
-  <data name="yellowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="yellowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Жовтий</value>
   </data>
   <data name="colorToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
@@ -436,26 +415,53 @@
   <data name="colorToolStripMenuItem1.Text" xml:space="preserve">
     <value>Колір</value>
   </data>
-  <data name="FigureContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 70</value>
+  <data name="redToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="redToolStripMenuItem.Text" xml:space="preserve">
+    <value>Червоний</value>
+  </data>
+  <data name="blueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="blueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Блакитний</value>
+  </data>
+  <data name="greenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="greenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Зелений</value>
+  </data>
+  <data name="blackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="blackToolStripMenuItem.Text" xml:space="preserve">
+    <value>Чорний</value>
+  </data>
+  <data name="yellowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="yellowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Жовтий</value>
   </data>
   <data name="buttonSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>828, 10</value>
+    <value>730, 0</value>
+  </data>
+  <data name="buttonSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 25</value>
   </data>
   <data name="buttonSave.Text" xml:space="preserve">
     <value>Зберегти</value>
   </data>
   <data name="buttonLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>905, 10</value>
+    <value>830, 0</value>
   </data>
   <data name="buttonLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 34</value>
+    <value>95, 25</value>
   </data>
   <data name="buttonLoad.Text" xml:space="preserve">
     <value>Завантажити</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Темна</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Векторна малювалка</value>

@@ -27,13 +27,17 @@ namespace VectorPaint
         private Memento mem;
         bool f = false;
         private TabPage.ControlCollection CurrentTabControls = null;
-        private string currentTheme = "Dark";
+        private string currentTheme = "";
 
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        protected override void OnShown(EventArgs e)
+        {
+            ChangeTheme("Dark");
+        }
+        
         private void Color_pan_Click(object sender, EventArgs e)
         {
             ColorDialogInvoker();
@@ -367,16 +371,14 @@ namespace VectorPaint
         {
             if (currentTheme == theme)
             {
-                MessageBox.Show(String.Format("Текущая тема совпадает с выбраной {0}", currentTheme));
                 return;
             }
-            MessageBox.Show(String.Format("Считай, что поменял тему на {0}", theme));
             currentTheme = theme;
-            //SkinnsFactory factory = new SkinnsFactory();
-            //foreach (Form frm in Application.OpenForms)
-            //{
-            //factory.AcceptSkin(theme, frm);
-            //}
+            SkinsFactory factory = new SkinsFactory();
+            foreach (Form frm in Application.OpenForms)
+            {
+                factory.AcceptSkin(theme, frm);
+            }
         }
 
         public void CreateFigure(XData Data)
@@ -487,11 +489,12 @@ namespace VectorPaint
         {
             string theme = (sender as ToolStripMenuItem).Tag.ToString();
 
-            SkinnsFactory factory = new SkinnsFactory();
+            SkinsFactory factory = new SkinsFactory();
             foreach (Form frm in Application.OpenForms)
             {
                 factory.AcceptSkin(theme, frm);
             }
+            Tabs_tc.Refresh();
         }
 
     }
