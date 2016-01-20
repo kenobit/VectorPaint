@@ -81,13 +81,16 @@ namespace VectorPaint
         private void TabMouseDown(object sender, MouseEventArgs e)
         {
             this.Focus();
+
             this.tabX = e.X;
             this.tabY = e.Y;
+
             IShape shape = SelectedFigureCheck(e);
             shape.MenuContext = FigureContextMenu;
             this.currentShape = shape;
             (sender as TabPage).Controls.Add(shape);
             CurrentTabControls = (sender as TabPage).Controls;
+
             buttonSave.Enabled = true;
             f = true;
         }
@@ -325,10 +328,7 @@ namespace VectorPaint
 
         private void tabChangerInToolstrip_Click(object sender, EventArgs e)
         {
-            // ToolStripMenuItem tab_tollstrip = (sender as ToolStripMenuItem);
             MessageBox.Show("Sorry, feature does not implemented yet");
-            // Tabs_tc.SelectedIndex = Tabs_tc.TabPages //[(tab_tollstrip.OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf(tab_tollstrip)];
-
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -347,7 +347,6 @@ namespace VectorPaint
                     case "English":
                         {
                             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-
                         }
                         break;
                     case "Москальский":
@@ -370,7 +369,6 @@ namespace VectorPaint
 
         public void CreateFigure(XData Data)
         {
-
             string type = Data.Type;
             switch (type)
             {
@@ -413,13 +411,13 @@ namespace VectorPaint
                 if (ctl is MenuStrip)
                 {
                     ApplyResourcesMenuItems(manager, (ctl as MenuStrip).Items);
-
                 }
                 else if (ctl is ToolStrip)
                 {
                     ApplyResourcesToolsItems(manager, (ctl as ToolStrip).Items);
                 }
-                else {
+                else
+                {
                     ApplyResources(manager, ctl.Controls);
                 }
             }
