@@ -36,6 +36,8 @@ namespace VectorPaint
         protected override void OnShown(EventArgs e)
         {
             ChangeTheme("Dark");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            LocalizeForm(this);
         }
         
         private void Color_pan_Click(object sender, EventArgs e)
@@ -96,6 +98,7 @@ namespace VectorPaint
             buttonSave.Enabled = true;
             f = true;
         }
+
         private void TabMouseUp(object sender, MouseEventArgs e)
         {
             f = false;
@@ -230,11 +233,11 @@ namespace VectorPaint
             PointY_tb.Text = figure.Data.PointY.ToString();
             Width_tb.Text = figure.Data.Width.ToString();
         }
+
         public XData FromBarsToFigure()
         {
             return new XData(Convert.ToInt32(PointX_tb.Text), Convert.ToInt32(PointY_tb.Text), Convert.ToInt32(SizeX_tb.Text), Convert.ToInt32(SizeX_tb.Text), Convert.ToInt32(Width_tb.Text), Color_pan.BackColor);
         }
-
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
